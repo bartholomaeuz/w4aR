@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry":  {"type":"LineString","coordinates":[[15.3287585,47.4528072],[15.3288112,47.4528352],[15.3291726,47.4530719],[15.3294179,47.4533162],[15.3295706,47.4534612]]}
+	
+
+	}],"crs": {
+  "type": "name",
+  "properties": {
+    "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },"bbox":[15.31,47.44,15.34,47.47]}
+  
