@@ -50,12 +50,13 @@
 \begin{document}
 %
 % --- Author Metadata here ---
-\conferenceinfo{Foss4g Europe}{'14 Bremen, Germany}
+\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 %\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{Open Source pedestrian routing service with OpenStreetMap Data for blind people\titlenote{(Produces the permission block, and
+\title{Alternate {\ttlit ACM} SIG Proceedings Paper in LaTeX
+Format\titlenote{(Produces the permission block, and
 copyright information). For use with
 SIG-ALTERNATE.CLS. Supported by ACM.}}
 \subtitle{[Extended Abstract]
@@ -88,7 +89,7 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{3} %  in this sample file, there are a *total*
+\numberofauthors{8} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -104,25 +105,58 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 % e-mail address with \email.
 %
 % 1st. author
-\alignauthor Markus Dornhofer\\
-       \affaddr{FH JOANNEUM}\\
-       \affaddr{Energy and Transportation}\\
-       \affaddr{Kapfenberg - Austria}\\
-       \email{markus.dornhofer @fh-joanneum.at}
+\alignauthor
+Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
+       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{1932 Wallamaloo Lane}\\
+       \affaddr{Wallamaloo, New Zealand}\\
+       \email{trovato@corporation.com}
+% 2nd. author
+\alignauthor
+G.K.M. Tobin\titlenote{The secretary disavows
+any knowledge of this author's actions.}\\
+       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{P.O. Box 1212}\\
+       \affaddr{Dublin, Ohio 43017-6221}\\
+       \email{webmaster@marysville-ohio.com}
+% 3rd. author
+\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
+one who did all the really hard work.}\\
+       \affaddr{The Th{\o}rv{\"a}ld Group}\\
+       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
+       \affaddr{Hekla, Iceland}\\
+       \email{larst@affiliation.org}
+\and  % use '\and' if you need 'another row' of author names
+% 4th. author
+\alignauthor Lawrence P. Leipuner\\
+       \affaddr{Brookhaven Laboratories}\\
+       \affaddr{Brookhaven National Lab}\\
+       \affaddr{P.O. Box 5000}\\
+       \email{lleipuner@researchlabs.org}
 % 5th. author
-\alignauthor Werner Bischof\\
-       \affaddr{FH JOANNEUM}\\
-       \affaddr{Energy and Transportation}\\
-       \affaddr{Kapfenberg - Austria}\\
-       \email{werner.bischof @fh-joanneum.at}
+\alignauthor Sean Fogarty\\
+       \affaddr{NASA Ames Research Center}\\
+       \affaddr{Moffett Field}\\
+       \affaddr{California 94035}\\
+       \email{fogartys@amesres.org}
 % 6th. author
-\alignauthor Elmar Krajnc\\
-       \affaddr{FH JOANNEUM}\\
-       \affaddr{Internet Technology}\\
-       \affaddr{Kapfenberg - Austria}\\
-       \email{elmar.krajnc @fh-joanneum.at}
+\alignauthor Charles Palmer\\
+       \affaddr{Palmer Research Laboratories}\\
+       \affaddr{8600 Datapoint Drive}\\
+       \affaddr{San Antonio, Texas 78229}\\
+       \email{cpalmer@prl.com}
 }
-
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
 
 \maketitle
 \begin{abstract}
@@ -275,8 +309,8 @@ just to demonstrate \LaTeX's able handling of numbering.
 
 \subsection{Citations}
 Citations to articles \cite{bowman:reasoning,
-braams:babel, herlihy:methodology},
-conference proceedings \cite{Rehrl:2010} or
+clark:pct, braams:babel, herlihy:methodology},
+conference proceedings \cite{clark:pct} or
 books \cite{salas:calculus, Lamport:LaTeX} listed
 in the Bibliography section of your
 article will occur throughout the text of your article.
@@ -321,43 +355,15 @@ dvi output of this document.
 
 \begin{table}
 \centering
-\caption{Example Routing List}
-\begin{tabular}{|c|c|c|c|c|} \hline
-No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
-4&282&Werk-VI-Strasse&250m&NW\\ \hline
-12&14&Path&24m&SW\\ \hline
-\end{tabular}
+\caption{Frequency of Special Characters}
+\begin{tabular}{|c|c|l|} \hline
+Non-English or Math&Frequency&Comments\\ \hline
+\O & 1 in 1,000& For Swedish names\\ \hline
+$\pi$ & 1 in 5& Common in math\\ \hline
+\$ & 4 in 5 & Used in business\\ \hline
+$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
+\hline\end{tabular}
 \end{table}
-
-\begin{description}
-  \item[+] The first item
-  \item[+] The second item
-  \item[-] The third etc
-\end{description}
-
-\lstset{
-    language=xml,
-    tabsize=3,
-    %frame=lines,
-    caption=Test,
-    label=code:sample,
-    frame=shadowbox,
-    rulesepcolor=\color{gray},
-    xleftmargin=20pt,
-    framexleftmargin=15pt,
-    keywordstyle=\color{blue}\bf,
-    commentstyle=\color{OliveGreen},
-    stringstyle=\color{red},
-    numbers=left,
-    numberstyle=\tiny,
-    numbersep=5pt,
-    breaklines=true,
-    showstringspaces=false,
-    basicstyle=\footnotesize,
-    emph={food,name,price},emphstyle={\color{magenta}}}
-    \lstinputlisting{mapconfig_for_cars.xml}
-
-
 
 To set a wider table, which takes up the whole width of
 the page's live area, use the environment
@@ -397,11 +403,9 @@ details on each of these is found in the \textit{Author's Guide}.
 
 \begin{figure}
 \centering
-\includegraphics[width=4in]{Overview.png}
-\caption{Overview}
+\epsfig{file=fly.eps}
+\caption{A sample black and white graphic (.eps format).}
 \end{figure}
-
-
 
 \begin{figure}
 \centering
