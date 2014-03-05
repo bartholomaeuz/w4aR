@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Pegelstand</title>
+  <script src="Chart.js"></script>
+                <meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+                <style>
+                        canvas{
+                        }
+                </style>
+</head>
+<body>
+<canvas id="canvas" height="400" width="4000"></canvas>
+<script>
+
+	
+	function jsonpResponse(json){
+		var entry = '';
+		var len=json.length;		
+		var wasserstand = new Array();
+		var n = new Array();
+		var j;
+		  
+		for(var i=0;i<len;i++){
+			entry = json[i];
+			wasserstand[i] = entry.Wasserstand;
+			j=len-i-1;
+			if((j%4)==0){
+				n[i]=Math.floor(j/4) + ':00';
+			}else{
+				n[i]=Math.floor(j/4) + ':'+((j%4)*15);
+			}
+			
+			
+		}	
+		var lineChartData = {  
+						labels :	n,	
+                        datasets : [
+                                {
+                                        fillColor : "rgba(220,220,220,0.5)",
+                                        strokeColor : "rgba(220,220,220,1)",
+                                        pointColor : "rgba(220,220,220,1)",
+                                        pointStrokeColor : "#fff",
+                                        data : wasserstand
+                                }
+                        ]
+                        
+                }
+		var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);		
+		
+	}
+	
+</script>
+<script type="text/javascript" src="http://p197890.mittwaldserver.info/pegel/100_3tage.json"></script>
+
+</body>
+
+</html>
