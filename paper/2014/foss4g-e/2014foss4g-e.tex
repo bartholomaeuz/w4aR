@@ -229,6 +229,38 @@ Database, many differnent shortest path algorithms, no turn instructions, easy t
 
 http://workshop.pgrouting.org/
 
+\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting}]{mapconfig_for_cars.xml}
+
+\subsection{OpenTripPlaner}
+ 
+The OpenTripPlaner servlet runs on any standards-compliant Java web server. It is a complete bundle with includes a REST API and a Webfrontend. The Webfrontend let you set an start and end point and with button a route can be requested. Drag and Drop the markers as with the OSRM Webfrontend is not possible. The route request takes much more time as with the OSRM routing service. For other Applications like Smartphone Apps there is a well dokumentated REST API, where a route can be requested with many parameters. One routing process can handle multiple profiles (i.e. Walking, Bicycle and Car) and intermodal transportation. GTFS (General Transit Feed Specification) format from Google is used to query the timetables from public transportation companies. 
+
+\begin{description}
+  \item[+] includes public transportation ( GTFS)
+  \item[+] intermodal (i.e. walk and public transportation) transportaion
+  \item[+] well documented REST API
+  \item[+] seperated JAVA web-apps (Webfrontend and Routing Service)
+  \item[+] less dependencies (any standards-compliant Java web server)
+  \item[+] multiple profies (Bike, walk, transit) handled by a single routing process
+  \item[+] walk speed selectable
+  \item[+] safety options in the configure file available
+  \item[+] easy to configuration with xml file
+  \item[+] Logging and Debugging 
+  \item[-] slow route calculation
+  \item[-] need much resources to build routing graph   
+\end{description} 
+ 
+ 
+
+
+
+https://github.com/opentripplanner/OpenTripPlanner/wiki/GraphBuilder
+https://github.com/opentripplanner/OpenTripPlanner/wiki/GraphStructure
+
+http://localhost:8080/opentripplanner-api-webapp/ws/serverinfo
+
+
+
 
 
 
@@ -409,7 +441,6 @@ No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
 \end{description}
 
 
-\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting}]{mapconfig_for_cars.xml}
 
 \lstinputlisting[basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osrm}]{foot-osrm.lua}
 
