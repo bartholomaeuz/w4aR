@@ -205,8 +205,29 @@ Sven Leitinger from Salzburg Research wrote a guideline to enhance the OSM Data 
   \item kerb
 \end{description}
 
+\section{Routing}
+Five requirements:
+-A procedure to set start point and end point
+- A connected network (routing graph), on which the routing can be performed
+- An algorithm that computes the route between start point and end point
+- The inclusion of user requirements in the route computation and selection
+- The presentation of the results to the use
 
+\section{Comparison between different routing tools (in context to blind persons)}
 
+What information is in the routing graph? What streets are prefered by blind persons? What solution is the best?
+The Webfrontend is not required for the blind users, but it is important for the developer. It is easy to test different routes and it gives you a good impression about the speed of the routing service.
+
+\begin{figure}
+\centering
+\includegraphics[width=4in]{Overview.png}
+\caption{Overview}
+\end{figure}
+
+\subsection{pgrouting}
+Database, many differnent shortest path algorithms, no turn instructions, easy to get geojson track with server side programming languarge (i.e. PHP). no Web-Frontend
+
+http://workshop.pgrouting.org/
 
 
 
@@ -428,11 +449,7 @@ This sample document contains examples of \textbf{.eps}
 and \textbf{.ps} files to be displayable with \LaTeX.  More
 details on each of these is found in the \textit{Author's Guide}.
 
-\begin{figure}
-\centering
-\includegraphics[width=4in]{Overview.png}
-\caption{Overview}
-\end{figure}
+
 
 
 
