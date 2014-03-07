@@ -224,7 +224,7 @@ The Webfrontend is not required for the blind users, but it is important for the
 \caption{Overview}
 \end{figure}
 
-\subsection{pgrouting}
+\subsection{pgrouting\cite{pgrouting}}
 Database, many differnent shortest path algorithms, no turn instructions, easy to get geojson track with server side programming languarge (i.e. PHP). no Web-Frontend
 
 http://workshop.pgrouting.org/
@@ -284,6 +284,8 @@ No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
 12&14&Path&24m&SW\\ \hline
 \end{tabular}
 \end{table}
+
+\lstinputlisting[basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osrm}]{foot-osrm.lua}
 
 \section{System Design}
 The system was designed as Server/Client Infrastructure. The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and an destination. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The json file contains the gpx Track and turn instructions on specific track points. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West) 
@@ -432,8 +434,7 @@ and follow it with another numbered equation:
 just to demonstrate \LaTeX's able handling of numbering.
 
 \subsection{Citations}
-Citations to articles \cite{bowman:reasoning,
-braams:babel, herlihy:methodology},
+Citations to articles \cite{braams:babel, herlihy:methodology},
 conference proceedings \cite{Rehrl:2010} or
 books \cite{salas:calculus, Lamport:LaTeX} listed
 in the Bibliography section of your
@@ -495,7 +496,7 @@ No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
 
 
 
-\lstinputlisting[basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osrm}]{foot-osrm.lua}
+
 
 To set a wider table, which takes up the whole width of
 the page's live area, use the environment
