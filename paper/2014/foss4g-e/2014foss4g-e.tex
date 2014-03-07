@@ -259,9 +259,62 @@ https://github.com/opentripplanner/OpenTripPlanner/wiki/GraphStructure
 
 http://localhost:8080/opentripplanner-api-webapp/ws/serverinfo
 
+\subsection{OSRM}
+
+\begin{description}
+\item[+]very fast, 
+\item[+]generates the graph on the settings in a profile.lua file
+\item[+]lua configuration for routing graph (lua script language ), 
+\item[+]shortest path calculation contraction hierarchies, faster then dijskta algorithm
+\item[+]+blacklist of street, which should not be used
+\item[+]delivers gpx track or turn instruction list in json,
+\item[+]nice Web frontend, supports multiple targets,
+\item[-] no safety properties, influence the route with different speed parameters, a safe street get a high speed value
+\end{description}
+
+C++,No turn instruction if the road name stays the same. Made for cars
+
+
+\begin{table}
+\centering
+\caption{Example Routing List}
+\begin{tabular}{|c|c|c|c|c|} \hline
+No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
+4&282&Werk-VI-Strasse&250m&NW\\ \hline
+12&14&Path&24m&SW\\ \hline
+\end{tabular}
+\end{table}
+
+\section{System Design}
+The system was designed as Server/Client Infrastructure. The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and an destination. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The json file contains the gpx Track and turn instructions on specific track points. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West) 
+
+A network connection is needed for every route request.
+
+\section{First Results and Tests}
+
+OSRM Request with Android smartphone 
+
+
+\section{Conclusion}
 
 
 
+\section{Future work}
+Problems: some info is not  in the track, i.e Position Builduings  own solution is needed
+Follow the track function in parks, No turn instruction when the road stays the same, start point or endpoint hit the wrong road. If the point is closer to a highway, then it would be choosen in front a footway. 
+
+priority of the footways
+
+
+\section{Acknowledgements}
+
+ The overall project manager is the University of Applied Sciences FH-JOANNEUM in Kapfenberg, Austria. One focus of the project ways4all is to support visually impaired and blind people in their daily lives with the help of usual smartphones. Additional equipment is a no goal of the project. One module focus on indoor and outdoor navigation.
+ Project
+participants are: Wiener Linien, OEBB, Transelektronik Messgerte
+GmbH and four blind and handicapped organisations.
+The project is subsidized by the Austrian Federal Ministry
+for Transport, Innovation and Technology (BMVIT) and the
+Austrian Research Promotion Agency (FFG).
 
 
 \section{Introduction}
