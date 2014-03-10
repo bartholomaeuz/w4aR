@@ -1,10 +1,10 @@
 <bean class="WayPropertyPicker">
-	<property name="specifier" value="highway=motorway;cycleway=lane" />
-	<property name="properties">
-		<bean class="WayProperties">
-			<property name="safetyFeatures" value="1.5,1.5" />
-			<property name="permission" value="BICYCLE_AND_CAR" />
-		</bean>
-	</property>
+ <property name="specifier" value="highway=motorway;cycleway=lane" />
+  <property name="properties">
+   <bean class="WayProperties">
+    <property name="safetyFeatures" value="1.5,1.5" />
+    <property name="permission" value="BICYCLE_AND_CAR" />
+   </bean>
+  </property>
 </bean>
 
