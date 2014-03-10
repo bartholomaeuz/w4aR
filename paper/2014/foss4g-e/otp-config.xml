@@ -1,0 +1,37 @@
+<property name="wayPropertySet">
+    <bean class="org.opentripplanner.graph_builder.impl.osm.WayPropertySet">
+        <property name="wayProperties">
+            <list>
+                <bean class="org.opentripplanner.graph_builder.impl.osm.WayPropertyPicker">
+                    <property name="specifier" value="highway=motorway" />
+                    <property name="properties">
+                        <bean class="org.opentripplanner.graph_builder.impl.osm.WayProperties">
+                            <property name="permission" value="CAR" />
+                        </bean>
+                    </property>
+                </bean>
+
+                <bean class="org.opentripplanner.graph_builder.impl.osm.WayPropertyPicker">
+                    <property name="specifier" value="highway=motorway;cycleway=lane" />
+                    <property name="properties">
+                        <bean class="org.opentripplanner.graph_builder.impl.osm.WayProperties">
+                            <property name="safetyFeatures" value="1.5,1.5" />
+                            <property name="permission" value="BICYCLE_AND_CAR" />
+                        </bean>
+                    </property>
+                </bean>
+
+
+                <bean class="org.opentripplanner.graph_builder.impl.osm.WayPropertyPicker">
+                    <property name="specifier" value="surface=gravel" />
+                    <property name="properties">
+                        <bean class="org.opentripplanner.graph_builder.impl.osm.WayProperties">
+                            <property name="safetyFeatures" value="2.0,2.0" />
+                            <property name="safetyMixin" value="true" />
+                        </bean>
+                    </property>
+                </bean>                
+            </list>
+        </property>
+    </bean>
+</property>
