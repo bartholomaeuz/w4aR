@@ -53,72 +53,27 @@
 %
 % --- Author Metadata here ---
 \conferenceinfo{Foss4g Europe}{'14 Bremen, Germany}
-%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
-%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{Open Source pedestrian routing service with OpenStreetMap Data for blind people
-\titlenote{(Produces the permission block, and
-copyright information). For use with
-SIG-ALTERNATE.CLS. Supported by ACM.}}
-\subtitle{PgRouting, OpenTripPlanner and OpenSourceRoutingMaschine
-\titlenote{A full version of this paper is available as
-\textit{Author's Guide to Preparing ACM SIG Proceedings Using
-\LaTeX$2_\epsilon$\ and BibTeX} at
-\texttt{www.acm.org/eaddress.htm}}}
-%
-% You need the command \numberofauthors to handle the 'placement
-% and alignment' of the authors beneath the title.
-%
-% For aesthetic reasons, we recommend 'three authors at a time'
-% i.e. three 'name/affiliation blocks' be placed beneath the title.
-%
-% NOTE: You are NOT restricted in how many 'rows' of
-% "name/affiliations" may appear. We just ask that you restrict
-% the number of 'columns' to three.
-%
-% Because of the available 'opening page real-estate'
-% we ask you to refrain from putting more than six authors
-% (two rows with three columns) beneath the article title.
-% More than six makes the first-page appear very cluttered indeed.
-%
-% Use the \alignauthor commands to handle the names
-% and affiliations for an 'aesthetic maximum' of six authors.
-% Add names, affiliations, addresses for
-% the seventh etc. author(s) as the argument for the
-% \additionalauthors command.
-% These 'additional authors' will be output/set for you
-% without further effort on your part as the last section in
-% the body of your article BEFORE References or any Appendices.
+\title{Comparison of Open Source routing services with OpenStreetMap Data for blind pedestrians}
+\subtitle{PgRouting, OpenTripPlanner and OpenSourceRoutingMaschine}
 
-\numberofauthors{3} %  in this sample file, there are a *total*
-% of EIGHT authors. SIX appear on the 'first-page' (for formatting
-% reasons) and the remaining two appear in the \additionalauthors section.
-%
+\numberofauthors{3} 
+
 \author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
 % 1st. author
 \alignauthor Markus Dornhofer\\
        \affaddr{FH JOANNEUM}\\
        \affaddr{Energy and Transportation}\\
        \affaddr{Kapfenberg - Austria}\\
        \email{markus.dornhofer @fh-joanneum.at}
-% 5th. author
+% 2th. author
 \alignauthor Werner Bischof\\
        \affaddr{FH JOANNEUM}\\
        \affaddr{Energy and Transportation}\\
        \affaddr{Kapfenberg - Austria}\\
        \email{werner.bischof @fh-joanneum.at}
-% 6th. author
+% 3th. author
 \alignauthor Elmar Krajnc\\
        \affaddr{FH JOANNEUM}\\
        \affaddr{Internet Technology}\\
@@ -126,11 +81,7 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
        \email{elmar.krajnc @fh-joanneum.at}
 }
 
-
 \maketitle
-
-
-
 
 \begin{abstract}
 This paper provides a sample of a \LaTeX\ document which conforms,
@@ -157,14 +108,8 @@ is available on the web page to help you with the
 `look and feel'.
 \end{abstract}
 
-% A category with the (minimum) three required fields
-\category{H.4}{Information Systems Applications}{Miscellaneous}
-%A category including the fourth, optional field follows...
-\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+\keywords{GIS, Routing, Navigation, Blind, Pedestrian}
 
-\terms{Theory}
-
-\keywords{ACM proceedings, \LaTeX, text tagging}
 \section{Introduction}
 For visually impaired and blind people the fastest or the shortest route is not the important fact, they prefer the safest route from a start point to an end point. There are some navigation systems for blind users available on the market, but no system make an highly uses of additional data for blind users. 
 OpenStreetMap contains very useful information for visually impaired and blind people. It make it possible to find a safe route from a start point to an end point, which includes acoustical traffic signals and safe sidewalks.Also additional information can improve the navigation. If the user is told that the building is on the right hand side, he/she can verify the information and improve the positioning. Or a warning can occur in front of a waste basket or a traffic sign in an critical position (i.e closed to the head). 
@@ -180,22 +125,19 @@ The navigation App should also work in the background
 
 \section{Related Work}
 
-Loadstone GPS:
+\subsection{Loadstone GPS}
 The pioneer in free GPS navigation software is Loadstone GPS\cite{loadstone}. It is running on Symbinan mobile phones and uses an external bluetooth GPS receiver. The product is very popular in the community of blind and visually impaired people.
 
-Blindsquare:
-Blindsquare\cite{blindsquare} is an Iphone App and uses point of interest information from foursquare and OpenStreetMap. The actual price is about US dollar 24. 
+\subsection{Blindsquare}
+Blindsquare\cite{blindsquare} is an Iphone App and uses point of interest information from foursquare and OpenStreetMap. The actual price is about 24 US Dollar. 
 
-OSMAnd Maps and Navigation:
+\subsection{OSMAnd Maps and Navigation}
 
-Weyrer (FH K\"{a}rnten): 
+\subsection{Weyrer (FH K\"{a}rnten)} 
 Timothy Weyrer\cite{weyrer} wrote a master thesis about intermodal door-to-door application for people with disabilities on the carinthia university of applied sciences.
 
-Sven Leitinger (SR):
+\subsection{Sven Leitinger (SR)}
 Sven Leitinger\cite{sven:osm} from Salzburg Research wrote a guideline to enhance the OSM Data with blind related attibutes. He explained most of the OSM tag, which are useful for blind people. The work focus on existing OSM tags and are not creating new features. But no prioritisation of OSM tag had been made. 
-
-\section{Project Ways4all}
-
 
 \section{OSM Related}
 \begin{description}
