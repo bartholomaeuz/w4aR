@@ -1436,7 +1436,7 @@
 %\DeclareFixedFont{\altcrnotice}{OT1}{tmr}{m}{n}{8}  % << patch needed for accenting e.g. Montreal - Gerry, May 2007
 %\DeclareFixedFont{\altconfname}{OT1}{tmr}{m}{it}{8}  % << patch needed for accenting in italicized confname - Gerry, May 2007
 %
-%{\altconfname{{\the\conf}}} {\altcrnotice\the\confinfo\par} \the\copyrightetc.}  % << Gerry, May 2007
+%{\altconfname{{\the\conf}}} {\altcrnotice\the\confinfo\par} \the\copyrightetc}  % << Gerry, May 2007
 %
 % The following section (i.e. 3 .sty inclusions) was added in May 2007 so as to fix the problems that many
 % authors were having with accents. Sometimes accents would occur, but the letter-character would be of a different
