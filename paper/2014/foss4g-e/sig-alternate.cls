@@ -1419,7 +1419,34 @@
 
 % Need Copyright Year and Copyright Data to be user definable (in .tex file).
 % Gerry Nov. 30th. 1999
-{\confname{\the\conf}} 
+\newtoks\copyrtyr
+\newtoks\acmcopyr
+\newtoks\boilerplate
+\global\acmcopyr={X-XXXXX-XX-X/XX/XX}  % Default - 5/11/2001 *** Gerry
+\global\copyrtyr={20XX}                % Default - 3/3/2003 *** Gerry
+\def\CopyrightYear#1{\global\copyrtyr{#1}}
+\def\crdata#1{\global\acmcopyr{#1}}
+\def\permission#1{\global\boilerplate{#1}}
+%
+\global\boilerplate={}
+\newtoks\copyrightetc
+\global\copyrightetc{} % Gerry changed to 15 May 2012
+\toappear{\the\boilerplate\par
+{\confname{\the\conf}} \the\confinfo\par \the\copyrightetc.}
+%\DeclareFixedFont{\altcrnotice}{OT1}{tmr}{m}{n}{8}  % << patch needed for accenting e.g. Montreal - Gerry, May 2007
+%\DeclareFixedFont{\altconfname}{OT1}{tmr}{m}{it}{8}  % << patch needed for accenting in italicized confname - Gerry, May 2007
+%
+%{\altconfname{{\the\conf}}} {\altcrnotice\the\confinfo\par} \the\copyrightetc.}  % << Gerry, May 2007
+%
+% The following section (i.e. 3 .sty inclusions) was added in May 2007 so as to fix the problems that many
+% authors were having with accents. Sometimes accents would occur, but the letter-character would be of a different
+% font. Conversely the letter-character font would be correct but, e.g. a 'bar' would appear superimposed on the
+% character instead of, say, an unlaut/diaresis. Sometimes the letter-character would NOT appear at all.
+% Using [T1]{fontenc} outright was not an option as this caused 99% of the authors to 'produce' a Type-3 (bitmapped)
+% PDF file - useless for production. 
+%
+% For proper (font) accenting we NEED these packages to be part of the .cls file i.e. 'ae', 'aecompl' and 'aeguil' 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %% This is file `ae.sty' 
 \def\fileversion{1.3}
 \def\filedate{2001/02/12}
