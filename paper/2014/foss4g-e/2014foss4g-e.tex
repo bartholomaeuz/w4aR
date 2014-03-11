@@ -207,12 +207,15 @@ Sven Leitinger\cite{sven:osm} from Salzburg Research wrote a guideline to enhanc
 \end{description}
 
 \section{Routing}
-Five requirements:
--A procedure to set start point and end point
-- A connected network (routing graph), on which the routing can be performed
-- An algorithm that computes the route between start point and end point
-- The inclusion of user requirements in the route computation and selection
-- The presentation of the results to the use
+Five requirements\cite{weyrer}:
+\begin{description}
+  \item A procedure to set start point and end point
+  \item A connected network (routing graph), on which the routing can be performed
+  \item An algorithm that computes the route between start point and end point
+  \item The inclusion of user requirements in the route computation and selection
+  \item The presentation of the results to the use
+\end{description}
+
 
 \section{Comparison between different routing tools (in context to blind persons)}
 
@@ -228,7 +231,6 @@ The Webfrontend is not required for the blind users, but it is important for the
 \subsection{pgrouting\cite{pgrouting}}
 Database, many differnent shortest path algorithms, no turn instructions, easy to get geojson track with server side programming languarge (i.e. PHP). no Web-Frontend
 
-http://workshop.pgrouting.org/
 
 \lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting}]{mapconfig_for_cars.xml}
 
@@ -301,11 +303,13 @@ No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
 \section{System Design}
 The system was designed as Server/Client Infrastructure. The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and an destination. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The json file contains the gpx Track and turn instructions on specific track points. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West) 
 
-A network connection is needed for every route request.
+A network connection is needed for every route request. 
 
 \section{First Results and Tests}
-
-OSRM Request with Android smartphone 
+The Android App development started in the same time as the comparison between the routing machines. It was clear that the App request a route with a start and a stop position and the server replies with a well structured (i.e. XML or JSON) format. \\
+The user interface and the navigation are much more important on the smartphone. The routing server should be replaceable. 
+By the way a OSRM Routing Service was chosen for the first test. On the app side a target position can be selected from a list and the actual position was used as start position. After the routing response is displayed in a new list \ref{fig:app}.
+The user can explore the whole trip on the screen. Turn instruction by turn instruction.  
 
 \begin{figure}
 \centering
@@ -316,7 +320,8 @@ OSRM Request with Android smartphone
 \begin{figure}
 \centering
 \includegraphics[width=3in]{App2.png}
-\caption{Overview}
+\label{fig:app}
+\caption{Android App}
 \end{figure}
 
 
