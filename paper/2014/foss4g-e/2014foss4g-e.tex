@@ -308,13 +308,15 @@ A network connection is needed for every route request.
 \section{First Results and Tests}
 The Android App development started in the same time as the comparison between the routing machines. It was clear that the App request a route with a start and a stop position and the server replies with a well structured (i.e. XML or JSON) format. \\
 The user interface and the navigation are much more important on the smartphone. The routing server should be replaceable. 
-By the way a OSRM Routing Service was chosen for the first test. On the app side a target position can be selected from a list and the actual position was used as start position. After the routing response is displayed in a new list (figure ~\ref{fig:app} on ~\pageref{fig:app}).
-The user can explore the whole trip on the screen. Turn instruction by turn instruction.  
+By the way a OSRM Routing Service was chosen for the first test. On the app side a target position can be selected from a list and the actual position was used as start position. After the routing response is displayed in a new list (figure ~\ref{fig:app}). \\
+The user can explore the whole trip on the screen. Turn instruction by turn instruction. The distance to the next turn instruction is spoken periodically. If the proximity of the crossing point is reached the turn instruction was told. \\
+
+ 
 
 \begin{figure}
 \centering
 \includegraphics[width=3in]{System-Design2.png}
-\caption{Overview}
+\caption{System Design}
 \end{figure}
 
 \begin{figure}
@@ -330,19 +332,14 @@ The user can explore the whole trip on the screen. Turn instruction by turn inst
 
 
 \section{Future work}
-Problems: some info is not  in the track, i.e Position Builduings  own solution is needed
-Follow the track function in parks, No turn instruction when the road stays the same, start point or endpoint hit the wrong road. If the point is closer to a highway, then it would be choosen in front a footway. 
-
-priority of the footways
+The first version was just a prove of concept. The main focus was on the user interface and on a stable server and client communication. The navigation has to be  improved a lot. There has to be a mode where blind people can follow a track in a park without much kerbs. Also a module is needed to get information about the near environment (i.e. Position of the road or building. This information could not be found in the route. There have to be turn instructions where the road stays the same, but makes a curve (i.e. priority roads). \\
+Side walks and Streets are closed to each other. It is important that the starting point do not snap to the Street in front the Side walk. \\
+And an Evaluation of the priority of footways has to be done. 
 
 
 \section{Acknowledgements}
-
- The overall project manager is the University of Applied Sciences FH-JOANNEUM in Kapfenberg, Austria. One focus of the project ways4all is to support visually impaired and blind people in their daily lives with the help of usual smartphones. Additional equipment is a no goal of the project. One module focus on indoor and outdoor navigation.
- Project
-participants are: Wiener Linien, OEBB, Transelektronik Messgerte
-GmbH and four blind and handicapped organisations.
-The project is subsidized by the Austrian Federal Ministry
+The overall project manager is the University of Applied Sciences FH-JOANNEUM in Kapfenberg, Austria. One focus of the project ways4all is to support visually impaired and blind people in their daily lives with the help of usual smartphones. Additional equipment is a no goal of the project. One module focus on indoor and outdoor navigation. \\
+Project participants are: Wiener Linien, OEBB and four blind and handicapped organisations. The project is subsidized by the Austrian Federal Ministry
 for Transport, Innovation and Technology (BMVIT) and the
 Austrian Research Promotion Agency (FFG).
 
