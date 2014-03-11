@@ -256,7 +256,7 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 \begin{figure}
 \centering
 \includegraphics[width=3in]{otp-ss.png}
-\caption{Overview}
+\caption{Screenshot OTP - Kapfenberg}
 \end{figure}
  
  The graph builder is controlled by an XML configuration. For big regions (i.e. the Country Austria) a lot of RAM is needed. OpenTripPlanner is intended for small and medium geographic areas, but with huge amount of RAM also big areas are possible. The safety parameter was invented for bicycles. There can be a notification, if the osm key surface  has a specific value (i.e. 'Caution: muddy!'). The safe value 1 is default. Very safe streets can have a value below 1 and for dangerous streets can be give a value more than 1. The distance of a street segment will be multiplied with the safe value. I.e. A ten times more dangerous street will have the the length of the street times 10. \\
@@ -267,7 +267,7 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 
 
 \subsection{OSRM}
-
+very fast\cite{luxen-vetter-2011}
 \begin{description}
 \item[+]very fast, 
 \item[+]generates the graph on the settings in a profile.lua file
@@ -282,7 +282,7 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 \begin{figure}
 \centering
 \includegraphics[width=3in]{osrm-ss.png}
-\caption{Overview}
+\caption{Screenshot OSRM - Kapfenberg}
 \end{figure}
 
 C++,No turn instruction if the road name stays the same. Made for cars
