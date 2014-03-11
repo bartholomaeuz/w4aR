@@ -1417,7 +1417,9 @@
 \flushbottom           % Even bottom -- alas, does not balance columns at end of document
 \pagestyle{plain}
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Need Copyright Year and Copyright Data to be user definable (in .tex file).
+% Gerry Nov. 30th. 1999
+{\confname{\the\conf}} 
 %% This is file `ae.sty' 
 \def\fileversion{1.3}
 \def\filedate{2001/02/12}
