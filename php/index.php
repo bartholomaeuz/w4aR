@@ -2,8 +2,8 @@
 
 
 //$timestamp = mktime(0,0,0,3,10,1979);
-//$timestamp = time();
-$timestamp = mktime(0,0,0,1,1,2014);
+$timestamp = time();
+//$timestamp = mktime(0,0,0,1,1,2014);
 $wochen = 52;
 
 echo "<table border='1'>";
