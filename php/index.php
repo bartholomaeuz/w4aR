@@ -1,5 +1,7 @@
 <?php
 
+$start = mktime(0,0,0,4,13,2014);
+$end = mktime(23,59,59,5,16,2014);
 
 //$timestamp = mktime(0,0,0,3,10,1979);
 $timestamp = time();
@@ -91,10 +93,15 @@ for($i = 0; $i < 7; $i++){
 		if((date('Y',time()) == date('Y',$nday2)) && (date('m',time()) == date('m',$nday2)) && (date('d',time()) == date('d',$nday2))){
 			echo "<td bgcolor='red'>".date('d', $nday2)."</td>";
 		}else{
-			if(date('m', $nday2)%2 == 0){
-				echo "<td bgcolor='gray'>".date('d', $nday2)."</td>";
+			if($nday2 > $start && $nday2 < $end){
+				echo "<td bgcolor='lightgreen'>".date('d', $nday2)."</td>";
 			}else{
-				echo "<td bgcolor='lightgray'>".date('d', $nday2)."</td>";
+		
+				if(date('m', $nday2)%2 == 0){
+					echo "<td bgcolor='gray'>".date('d', $nday2)."</td>";
+				}else{
+					echo "<td bgcolor='lightgray'>".date('d', $nday2)."</td>";
+				}
 			}
 		}
 	}
