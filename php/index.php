@@ -1,14 +1,9 @@
 <?php
 
 
-//$timestamp = mktime(20,07,0,4,12,2014);
-$timestamp = time();
-
-
-
-//echo date('w',$timestamp);
-
-$z = 0;
+//$timestamp = mktime(0,0,0,3,10,1979);
+//$timestamp = time();
+$timestamp = mktime(0,0,0,1,1,2014);
 $wochen = 52;
 
 echo "<table border='1'>";
@@ -16,18 +11,23 @@ echo "<table border='1'>";
 echo "<tr>";
 echo "<td>(Jahr)</td>";
 $spalten = 0;
-$mjahr = date('Y', time());
+$mjahr = 0;
 for($k = 0; $k < $wochen +1; $k++){
-		$nday4 = time() + ($k * 7  - date('w',$timestamp) ) * (24 *60 *60);
-		$jahr = date('Y', $nday4);
-		if($mjahr == $jahr){
-			$spalten++;
-		} 
-		else{
-			echo "<td colspan=".$spalten." bgcolor='lightblue'>".$mjahr."</td>";
-			$spalten = 1;
-			$mjahr = date('Y', $nday4);
-		}  
+	$nday4 = $timestamp + ($k * 7  - date('w',$timestamp) ) * (24 *60 *60);
+	$jahr = date('Y', $nday4);
+	if($mjahr == 0){
+		$mjahr = $jahr;
+	}
+	
+	
+	if($mjahr == $jahr){
+	$spalten++;
+	} 
+	else{
+	echo "<td colspan=".$spalten." bgcolor='lightblue'>".$mjahr."</td>";
+	$spalten = 1;
+	$mjahr = date('Y', $nday4);
+	}  
 		
 }
 echo "<td colspan=".$spalten." bgcolor='lightblue'>".$jahr."</td>";
@@ -36,10 +36,13 @@ echo "</tr>";
 echo "<tr>";
 echo "<td>(Monat)</td>";
 $spalten = 0;
-$mmonat = date('m', time());
+$mmonat = 0;
 for($k = 0; $k < $wochen +1; $k++){
-		$nday5 = time() + ($k * 7  - date('w',$timestamp) ) * (24 *60 *60);
+		$nday5 = $timestamp + ($k * 7  - date('w',$timestamp) ) * (24 *60 *60);
 		$monat = date('m', $nday5);
+		if($mmonat == 0){
+			$mmonat = $monat;
+		}
 		if($mmonat == $monat){
 			$spalten++;
 		} 
@@ -84,11 +87,15 @@ for($i = 0; $i < 7; $i++){
 	
 
 	for($j = 0; $j < $wochen; $j++){
-		$nday2 = time() + ($j * 7 + $i - date('w',$timestamp) ) * (24 *60 *60);
-		if(date('m', $nday2)%2 == 0){
-			echo "<td bgcolor='gray'>".date('d', $nday2)."</td>";
+		$nday2 = $timestamp + ($j * 7 + $i - date('w',$timestamp) ) * (24 *60 *60);
+		if((date('Y',time()) == date('Y',$nday2)) && (date('m',time()) == date('m',$nday2)) && (date('d',time()) == date('d',$nday2))){
+			echo "<td bgcolor='red'>".date('d', $nday2)."</td>";
 		}else{
-			echo "<td bgcolor='lightgray'>".date('d', $nday2)."</td>";
+			if(date('m', $nday2)%2 == 0){
+				echo "<td bgcolor='gray'>".date('d', $nday2)."</td>";
+			}else{
+				echo "<td bgcolor='lightgray'>".date('d', $nday2)."</td>";
+			}
 		}
 	}
 	echo "</tr>";
