@@ -1,6 +1,13 @@
 <?php
-$today = getdate();
-print_r($today);
+
+
+//$timestamp = mktime(20,07,0,4,12,2014);
+$timestamp = time();
+
+
+
+//echo date('w',$timestamp);
+
 $z = 0;
 $wochen = 52;
 
@@ -11,7 +18,7 @@ echo "<td>(Jahr)</td>";
 $spalten = 0;
 $mjahr = date('Y', time());
 for($k = 0; $k < $wochen +1; $k++){
-		$nday4 = time() + ($k * 7  - $today[wday] ) * (24 *60 *60);
+		$nday4 = time() + ($k * 7  - date('w',$timestamp) ) * (24 *60 *60);
 		$jahr = date('Y', $nday4);
 		if($mjahr == $jahr){
 			$spalten++;
@@ -31,7 +38,7 @@ echo "<td>(Monat)</td>";
 $spalten = 0;
 $mmonat = date('m', time());
 for($k = 0; $k < $wochen +1; $k++){
-		$nday5 = time() + ($k * 7  - $today[wday] ) * (24 *60 *60);
+		$nday5 = time() + ($k * 7  - date('w',$timestamp) ) * (24 *60 *60);
 		$monat = date('m', $nday5);
 		if($mmonat == $monat){
 			$spalten++;
@@ -75,41 +82,9 @@ for($i = 0; $i < 7; $i++){
         break;
 	}
 	
-	
-	/*
-	//if($z == 0){
-		if($i == $today[wday]){
-			echo "<td>X</td>";
-			$z=1;
-		}else{
-			echo "<td>&nbsp;&nbsp;</td>";
-//	}else{
-		//$tag =  mktime(0, 0, 0, date("m")  , date("d")+$z, date("Y"));
-		//echo "<td>".$z."</td>";
-	//}  */
-	
-	
-	
-	
-	if($z > 0){		
-		$nday = time() + ($z * 24 *60 *60);
-		if(date('m', $nday2)%2 == 0){
-			echo "<td bgcolor='gray'>".date('d', $nday)."</td>";
-		}else{
-			echo "<td bgcolor='lightgray'>".date('d', $nday)."</td>";
-		}
-		$z++;	
-	}else{
-		if($i == $today[wday]){
-			echo "<td bgcolor='red'>".$today[mday]."</td>";
-			$z++;
-		}else{
-			echo "<td>&nbsp;&nbsp;</td>";
-		}
-	
-	}
+
 	for($j = 0; $j < $wochen; $j++){
-		$nday2 = time() + ($j * 7 + $i + 7 - $today[wday] ) * (24 *60 *60);
+		$nday2 = time() + ($j * 7 + $i - date('w',$timestamp) ) * (24 *60 *60);
 		if(date('m', $nday2)%2 == 0){
 			echo "<td bgcolor='gray'>".date('d', $nday2)."</td>";
 		}else{
