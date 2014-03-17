@@ -94,7 +94,7 @@ for($i = 0; $i < 7; $i++){
 			echo "<td bgcolor='red'>".date('d', $nday2)."</td>";
 		}else{
 			if($nday2 > $start && $nday2 < $end){
-				echo "<td bgcolor='lightgreen'>".date('d', $nday2)."</td>";
+				echo "<td bgcolor='lightgreen' title='Motorcycle'>".date('d', $nday2)."</td>";
 			}else{
 		
 				if(date('m', $nday2)%2 == 0){
