@@ -105,7 +105,7 @@ The navigation App should also work in the background
 \section{Related Work}
 
 \subsection{Loadstone GPS}
-The pioneer in free GPS navigation software is Loadstone GPS\cite{loadstone}. It is running on Symbinan mobile phones and uses an external bluetooth GPS receiver. The product is very popular in the community of blind and visually impaired people.
+The pioneer in free GPS navigation software is Loadstone GPS\cite{loadstone}. It is running on Symbinan mobile phones and uses an external bluetooth GPS receiver. The product is very popular in the community of blind and visually impaired people. Nevertheless there is no active development anymore.
 
 \subsection{Blindsquare}
 Blindsquare\cite{blindsquare} is an Iphone App and uses point of interest information from foursquare and OpenStreetMap. The actual price is about 24 US Dollar. 
@@ -125,7 +125,7 @@ Some of the main features:
 
 
 \subsection{Weyrer (FH K\"{a}rnten)} 
-Timothy Weyrer\cite{weyrer} wrote a master thesis about intermodal door-to-door application for people with disabilities on the carinthia university of applied sciences.
+Timothy Weyrer\cite{weyrer} wrote a master thesis about intermodal door-to-door application for people with disabilities on the carinthia university of applied sciences. The implementation was done with the OpenTripPlanner (section \ref{subsec:otp} on page \pageref{subsec:otp} ) Routing Software
 
 \subsection{Sven Leitinger (SR)}
 Sven Leitinger\cite{sven:osm} from Salzburg Research wrote a guideline to enhance the OSM Data with blind related attibutes. He explained most of the OSM tag, which are useful for blind people. The work focus on existing OSM tags and are not creating new features. But no prioritisation of OSM tag had been made. 
@@ -175,6 +175,7 @@ Database, many differnent shortest path algorithms, no turn instructions, easy t
 \lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting}]{mapconfig_for_cars.xml}
 
 \subsection{OpenTripPlaner}
+\label{subsec:otp}
  
 The OpenTripPlaner servlet runs on any standards-compliant Java web server. It is a complete bundle with includes a REST API and a Webfrontend. The Webfrontend let you set an start and end point and with button a route can be requested. Drag and Drop the markers as with the OSRM Webfrontend is not possible. The route request takes much more time as with the OSRM routing service. For other Applications like Smartphone Apps there is a well dokumentated REST API, where a route can be requested with many parameters. One routing process can handle multiple profiles (i.e. Walking, Bicycle and Car) and intermodal transportation. GTFS (General Transit Feed Specification) format from Google is used to query the timetables from public transportation companies. 
 
