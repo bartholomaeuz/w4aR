@@ -124,10 +124,10 @@ Some of the main features:
 \end{description}
 
 
-\subsection{Weyrer (FH K\"{a}rnten)} 
-Timothy Weyrer\cite{weyrer} wrote a master thesis about intermodal door-to-door application for people with disabilities on the carinthia university of applied sciences. The implementation was done with the OpenTripPlanner (section \ref{subsec:otp} on page \pageref{subsec:otp} ) Routing Software
+\subsection{Ready.Set.Access} 
+Timothy Weyrer\cite{weyrer} wrote a master thesis about intermodal door-to-door application for people with disabilities on the carinthia university of applied sciences. The implementation was done with the OpenTripPlanner (section \ref{subsec:otp}) Routing Software. The main focus is on wheelchair accessibility. The project also analyses the topography of a region and flat slops are preferred. 
 
-\subsection{Sven Leitinger (SR)}
+\subsection{Guideline OSM data caption for blind pedestrian routing}
 Sven Leitinger\cite{sven:osm} from Salzburg Research wrote a guideline to enhance the OSM Data with blind related attibutes. He explained most of the OSM tag, which are useful for blind people. The work focus on existing OSM tags and are not creating new features. But no prioritisation of OSM tag had been made. 
 \subsection{Route CheckR}
 Paper\cite{Volkel:2008}
@@ -140,13 +140,13 @@ The map network consist of nodes and ways like a routing graph with special attr
 Some of the main attributes for blind pedestrians.
 \begin{description}
   \item highway=pedestrian,living\_street,path,footway,steps,elevator
-  \item surface=paved,unpaved,asphalt,concrete,concrete:plates,fine\_gravel,metal,paving\_stones
+  \item surface=paved,unpaved,asphalt,concrete,concrete:plates, fine\_gravel,metal,paving\_stones
   \item footway=sidewalk,kerb,tactile\_paving
   \item crossing,taffic\_signals:sound  
 \end{description}
 
 \section{Routing}
-The main task of an ordinary routing system is to find the shortest route or the fastest route. 
+The main task of an ordinary routing system is to find the shortest route or the fastest route. In blind person routing also safety plays a role.
 \subsection{Five requirements\cite{weyrer}}
 \begin{description}
   \item A procedure to set start point and end point
