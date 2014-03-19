@@ -114,26 +114,27 @@ Blindsquare\cite{blindsquare} is an Iphone App and uses point of interest inform
 OsmAnd (OSM Automated Navigation Directions) is a map and navigation application with access to the OpenStreetMap (OSM) data. All map data can be stored on your device's memory card for offline use. Via your device's GPS, OsmAnd offers routing, with optical and voice guidance, for car, bike, and pedestrian. All the main functionalities work both online and offline (no internet needed).
 OsmAnd works well for blind people with Talkback when the uses prestored favorits. The greatest challenge for the blind people is the destination input, which is only with standart keyboard and OSM Nominatim possible. \\
 Some of the main features: 
-\begin{description}
+
+\begin{itemize}
   \item Works online (fast) or offline (no roaming charges when you are abroad). 
   \item Turn-by-turn voice guidance (recorded and synthesized voices). 
   \item Optional lane guidance, street name display, and estimated time of arrival. 
   \item Supports intermediate points on your itinerary
   \item Automatic re-routing whenever you deviate from the route.
   \item Search for places by address, by type (e.g.: restaurant, hotel, gas station, museum), or by geographical coordinates
-\end{description}
+\end{itemize}
 
 
 \subsection{Ready.Set.Access} 
 Timothy Weyrer\cite{weyrer} wrote a master thesis about intermodal door-to-door application for people with disabilities on the Carinthia University of Applied Sciences. The implementation was done with the OpenTripPlanner (section \ref{subsec:otp}) Routing Software. It combines indoor and outdoor navigation. The main focus is on wheelchair accessibility. The project also analyses the topography of a region and flat slops are preferred. In the thesis a geospartial barrier catalog with six categories was one result. 
-\begin{description}
+\begin{itemize}
   \item Way Types
   \item Surface Types 
   \item Way Related Attribues 
   \item Node Information
   \item General Attributes
   \item Public Transport
-\end{description}
+\end{itemize}
 
 
 \subsection{Guideline OSM data caption for blind pedestrian routing}
@@ -147,23 +148,23 @@ The map network consist of nodes and ways like a routing graph with special attr
 
 \subsection{Interesting Features for blind people}
 Some of the main attributes for blind pedestrians.
-\begin{description}
+\begin{itemize}
   \item highway=pedestrian,living\_street,path,footway,steps,elevator
   \item surface=paved,unpaved,asphalt,concrete,concrete:plates, \\ fine\_gravel,metal,paving\_stones
   \item footway=sidewalk,kerb,tactile\_paving
   \item crossing,taffic\_signals:sound  
-\end{description}
+\end{itemize}
 
 \section{Routing Problem}
 The main task of an ordinary routing system is to find the shortest route or the fastest route. In blind person routing also safety plays a role.
 \subsection{Five requirements\cite{weyrer}}
-\begin{description}
+\begin{enumerate}
   \item A procedure to set start point and end point
   \item A connected network (routing graph), on which the routing can be performed
   \item An algorithm that computes the route between start point and end point
   \item The inclusion of user requirements in the route computation and selection
   \item The presentation of the results to the use
-\end{description}
+\end{enumerate}
 
 This work focus most on point 4 of the list. The influence of the user requirements on the route.  
 
@@ -224,7 +225,7 @@ very fast\cite{luxen-vetter-2011}
 \item[+]generates the graph on the settings in a profile.lua file
 \item[+]lua configuration for routing graph (lua script language ), 
 \item[+]shortest path calculation contraction hierarchies, faster then dijskta algorithm
-\item[+]+blacklist of street, which should not be used
+\item[+]blacklist of street, which should not be used
 \item[+]delivers gpx track or turn instruction list in json,
 \item[+]nice Web frontend, supports multiple targets,
 \item[-] no safety properties, influence the route with different speed parameters, a safe street get a high speed value
