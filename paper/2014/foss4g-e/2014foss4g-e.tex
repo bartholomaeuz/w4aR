@@ -140,8 +140,8 @@ Following questions has to be asked to choose the right routing service for the 
 
 Is the routing service free of charge and is it possible to adopt it for blind pedestrian routing? What additional information can be in the routing graph? Can it use OpenStreetMap data to generate the routing graph? Can the routing tool be configured to support blind pedestrians? The Web-Frontend is not required for the blind users, but it is important for the developer. It is easier to test different routes and it gives you a good impression about the output of the routing service. \\
 
+\section{Generation of the routing graph}
 
-\section{Comparison between different routing tools}
 All routing services in this comparison use OpenStreetMap data to generate the routing graph. It is important that the routing graph has all the OpenStreetMap attributes, which are important for blind people. The process is illustrated in figure \ref{fig:overview}
 
 \begin{figure}
@@ -150,7 +150,7 @@ All routing services in this comparison use OpenStreetMap data to generate the r
 \caption{Overview}
 \label{fig:overview}
 \end{figure}
-
+\section{Comparison between different routing tools}
 \subsection{pgRouting\cite{pgrouting}}
 pgRouting is an extension to the PostGIS standard. PostGIS brings spatial information to Postgres database. 
 In a workshop the combination of Geoserver and OpenLayers is shown. Also a example with QGIS is included. \\
@@ -178,7 +178,7 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
   \item[+] includes public transportation ( GTFS)
   \item[+] intermodal (i.e. walk and public transportation) transportaion
   \item[+] well documented REST API
-  \item[+] seperated JAVA web-apps (Webfrontend and Routing Service)
+  \item[+] separated JAVA web-apps (Webfrontend and Routing Service)
   \item[+] less dependencies (any standards-compliant Java web server)
   \item[+] multiple profies (Bike, walk, transit) handled by a single routing process
   \item[+] walk speed selectable
@@ -203,7 +203,8 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 
 
 \subsection{OSRM}
-very fast\cite{luxen-vetter-2011} generates the graph on the settings in a profile.lua file
+
+\cite{luxen-vetter-2011} generates the graph on the settings in a profile.lua file
 \begin{description}
 \item[+]very fast
 \item[+]lua script language to configure the routing graph 
