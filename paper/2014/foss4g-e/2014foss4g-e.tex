@@ -159,8 +159,8 @@ All routing services in this comparison use OpenStreetMap data to generate the r
 \end{figure}
 
 
-\subsection{pgRouting\cite{pgrouting}}
-pgRouting is an extension to the PostGIS standard. PostGIS brings spatial information to Postgres database. 
+\subsection{pgRouting}
+pgRouting\cite{pgrouting} is an extension to the PostGIS standard. PostGIS brings spatial information to Postgres database. 
 In a workshop the combination of Geoserver and OpenLayers is shown. Also a example with QGIS is included. \\
 With some lines of code, it is easy to get a GeoJson track with  some server side programming language (i.e. PHP or Perl). So even interfaces to Smartphone Applications should be manageable. But the lack of turn instructions makes the difference to other software tools.  
 
@@ -174,8 +174,9 @@ With some lines of code, it is easy to get a GeoJson track with  some server sid
   \item[-] no mature Web-Frontend  
 \end{description} 
 
+The OSM data can be tranfered to Postgres database by the program osm2pgrouting. Priorities of roads can be set in a Xml configuration file (Listing \ref{lst:pgr}).
 
-\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting Mapconfig.xml}]{mapconfig_for_cars.xml}
+\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting Mapconfig.xml},label={lst:pgr}]{mapconfig_for_cars.xml}
 
 \subsection{OpenTripPlaner}
 \label{subsec:otp}
@@ -204,11 +205,11 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 \label{fig:otp}
 \end{figure}
  
- The graph builder is controlled by an XML configuration. For big regions (i.e. the Country Austria) a lot of RAM is needed. OpenTripPlanner is intended for small and medium geographic areas, but with huge amount of RAM also big areas are possible. The safety parameter was invented for bicycles. There can be a notification, if the osm key surface  has a specific value (i.e. 'Caution: muddy!'). The safe value 1 is default. Very safe streets can have a value below 1 and for dangerous streets can be give a value more than 1. The distance of a street segment will be multiplied with the safe value. I.e. A ten times more dangerous street will have the the length of the street times 10. \\
+ The graph builder is controlled by an XML (Listing \ref{lst:otp}) configuration. For big regions (i.e. the Country Austria) a lot of RAM is needed. OpenTripPlanner is intended for small and medium geographic areas, but with huge amount of RAM also big areas are possible. The safety parameter was invented for bicycles. There can be a notification, if the osm key surface  has a specific value (i.e. 'Caution: muddy!'). The safe value 1 is default. Very safe streets can have a value below 1 and for dangerous streets can be give a value more than 1. The distance of a street segment will be multiplied with the safe value. I.e. A ten times more dangerous street will have the the length of the street times 10. \\
  With a permission key all transportation types (i.e. Pedestrian, Bicycle, ..) can be put on a white list. So street segment can be accessed by this type of transportation. \\
  It should be possible to convert the bicycle safety features to pedestrian safety features.
  
-\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={OTP GraphBuilder.xml}]{otp-config.xml}
+\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={OTP GraphBuilder.xml},label={lst:otp}]{otp-config.xml}
 
 
 \subsection{OpenSourceRoutingMachine}
@@ -245,13 +246,13 @@ No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
 \label{tab:rlist}
 \end{table}
 
-In the profile \ref{lst:osrm} settings different speeds for all kind of roads can be set. Additional OSM meta data can be delivered in the road name field. On every different name a turn instruction is triggered. 
+In the profile (Listing \ref{lst:osrm}) settings different speeds for all kind of roads can be set. Additional OSM meta data can be delivered in the road name field. On every different name a turn instruction is triggered. 
 
 
 \lstinputlisting[basicstyle=\footnotesize,breaklines=true,frame=lines,caption={OSRM profile.lua},label={lst:osrm}]{foot-osrm.lua}
 
 \section{System Design}
-The system was designed as Server/Client Infrastructure. The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and an destination. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The json file contains the Gpx Track and turn instructions on specific track points. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West).A network connection is needed for every route request. 
+The system was designed as Server/Client Infrastructure. The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and an destination. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The json file contains the Gpx Track and turn instructions on specific track points. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West). A network connection is needed for every route request. 
 
 \section{First Results and Tests}
 The Android App development started in the same time as the comparison between the routing machines. It was clear that the Application request a route with a start and a stop position and the server replies with a well structured (i.e. XML or JSON) format. \\
