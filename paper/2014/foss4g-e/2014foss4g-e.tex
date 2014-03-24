@@ -212,13 +212,13 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 
 
 \subsection{OpenSourceRoutingMachine}
-The project is separated in the routing service and a web frontend(Figure \ref{fig:osrm}). The routing service is written in C++ and needs less hardware resources. The routing graph can be influenced by a profile configuration. The profile is a lua script file. So even more sophisticated configurations can be done. In the standard configuration no safety properties are in the profile files. The route can be influenced by the speed parameter, so a safe street can have a higher speed value. Of course this will also change the travel time. \\
+The project is separated in the routing service and a web frontend(Figure \ref{fig:osrm}). The routing service is written in C++ and needs less hardware resources. The routing graph can be influenced by a profile configuration. The profile is a lua script file. So even more sophisticated configurations can be done. In the standard configuration no safety properties are in the profile files. The route can be influenced by the speed parameter, so a safe street can have a higher speed value.  This will also change the travel time. For every profile a single instance of the routing machine is needed.  \\
 \begin{description}
 \item[+]very fast\cite{luxen-vetter-2011}
 \item[+]lua script language to configure the routing graph 
 \item[+]shortest path calculation contraction hierarchies, faster then dijskta algorithm
 \item[+]blacklist of street, which should not be used
-\item[+]delivers gpx track or turn instruction list in json,
+\item[+]delivers Gpx track or turn instruction list in Json,
 \item[+]nice Web frontend, supports multiple targets,
 \item[-]no safety properties
 \end{description}
