@@ -175,7 +175,7 @@ With some lines of code, it is easy to get a GeoJson track with  some server sid
 \end{description} 
 
 
-\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting}]{mapconfig_for_cars.xml}
+\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting Mapconfig.xml}]{mapconfig_for_cars.xml}
 
 \subsection{OpenTripPlaner}
 \label{subsec:otp}
@@ -208,7 +208,7 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
  With a permission key all transportation types (i.e. Pedestrian, Bicycle, ..) can be put on a white list. So street segment can be accessed by this type of transportation. \\
  It should be possible to convert the bicycle safety features to pedestrian safety features.
  
-\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={GraphBuilder OTP}]{otp-config.xml}
+\lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={OTP GraphBuilder.xml}]{otp-config.xml}
 
 
 \subsection{OpenSourceRoutingMachine}
@@ -229,8 +229,10 @@ The project is separated in the routing service and a web frontend(Figure \ref{f
 \caption{Screenshot OSRM - Kapfenberg}
 \label{fig:osrm}
 \end{figure}
-No turn instruction if the road name stays the same. Made for cars
 
+The route can be configured for blind pedestrians, but there will be no turn instruction if the road name/type stays the same. So even on an orthogonal crossing there can be no turn instruction, if the road stays the same. 
+The missing turn instruction can be found on the Figure \ref{fig:osrm}. There is only one turn instructions, instead of two. \\
+The route response is well documented. It delivers all track points and for some track points a turn instruction. Some example turn instructions can be found on Table \ref{tab:rlist}. \\ 
 
 \begin{table}
 \centering
@@ -240,14 +242,16 @@ No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
 4&282&Werk-VI-Strasse&250m&NW\\ \hline
 12&14&Path&24m&SW\\ \hline
 \end{tabular}
+\label{tab:rlist}
 \end{table}
 
-\lstinputlisting[basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osrm}]{foot-osrm.lua}
+In the profile \ref{lst:osrm} settings different speeds for all kind of roads can be set. Additional OSM meta data can be delivered in the road name field. On every different name a turn instruction is triggered. 
+
+
+\lstinputlisting[basicstyle=\footnotesize,breaklines=true,frame=lines,caption={OSRM profile.lua},label={lst:osrm}]{foot-osrm.lua}
 
 \section{System Design}
-The system was designed as Server/Client Infrastructure. The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and an destination. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The json file contains the gpx Track and turn instructions on specific track points. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West) 
-
-A network connection is needed for every route request. 
+The system was designed as Server/Client Infrastructure. The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and an destination. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The json file contains the Gpx Track and turn instructions on specific track points. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West).A network connection is needed for every route request. 
 
 \section{First Results and Tests}
 The Android App development started in the same time as the comparison between the routing machines. It was clear that the Application request a route with a start and a stop position and the server replies with a well structured (i.e. XML or JSON) format. \\
