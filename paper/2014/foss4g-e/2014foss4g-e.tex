@@ -137,10 +137,17 @@ This work focus most on point 4 of the list. The influence of the user requireme
 
 \section{Prerequisites}
 Following questions has to be asked to choose the right routing service for the comparison.\\
+Is the routing service free of charge and is it possible to adopt it for blind pedestrian routing? What additional information can be in the routing graph? Can it use OpenStreetMap data to generate the routing graph? Can the routing tool be configured to support blind pedestrians? The Web-Frontend is not required for the blind users, but it is important for the developer. It is easier to test different routes and it gives you a good impression about the output of the routing service. 
+\section{Comparison between different routing tools}
+In a first selection 3 tools has been found, which fulfil the requirements. For sure there are more tools around, but these three are well documented and active.
+\begin{itemize}
+  \item PgRouting
+  \item OpenTripPlanner
+  \item OpenSourceRoutingMachine  
+\end{itemize}
 
-Is the routing service free of charge and is it possible to adopt it for blind pedestrian routing? What additional information can be in the routing graph? Can it use OpenStreetMap data to generate the routing graph? Can the routing tool be configured to support blind pedestrians? The Web-Frontend is not required for the blind users, but it is important for the developer. It is easier to test different routes and it gives you a good impression about the output of the routing service. \\
-
-\section{Generation of the routing graph}
+  
+\subsection{Generation of the routing graph}
 
 All routing services in this comparison use OpenStreetMap data to generate the routing graph. It is important that the routing graph has all the OpenStreetMap attributes, which are important for blind people. The process is illustrated in figure \ref{fig:overview}
 
@@ -150,7 +157,8 @@ All routing services in this comparison use OpenStreetMap data to generate the r
 \caption{Overview}
 \label{fig:overview}
 \end{figure}
-\section{Comparison between different routing tools}
+
+
 \subsection{pgRouting\cite{pgrouting}}
 pgRouting is an extension to the PostGIS standard. PostGIS brings spatial information to Postgres database. 
 In a workshop the combination of Geoserver and OpenLayers is shown. Also a example with QGIS is included. \\
@@ -172,7 +180,7 @@ With some lines of code, it is easy to get a GeoJson track with  some server sid
 \subsection{OpenTripPlaner}
 \label{subsec:otp}
  
-The OpenTripPlaner servlet runs on any standards-compliant Java web server. It is a complete bundle with includes a REST API and a Webfrontend. The Webfrontend let you set an start and end point and with button a route can be requested. Drag and Drop the markers as with the OSRM Webfrontend is not possible. The route request takes much more time as with the OSRM routing service. For other Applications like Smartphone Apps there is a well dokumentated REST API, where a route can be requested with many parameters. One routing process can handle multiple profiles (i.e. Walking, Bicycle and Car) and intermodal transportation. GTFS (General Transit Feed Specification) format from Google is used to query the timetables from public transportation companies. 
+The OpenTripPlaner servlet runs on any standards-compliant Java web server. It is a complete bundle with includes a REST API and a Webfrontend(Figure \ref{fig:otp}). The Webfrontend let you set an start and end point and with button a route can be requested. Drag and Drop the markers as with the OSRM Webfrontend is not possible. The route request takes much more time as with the OSRM routing service. For other Applications like Smartphone Apps there is a well dokumentated REST API, where a route can be requested with many parameters. One routing process can handle multiple profiles (i.e. Walking, Bicycle and Car) and intermodal transportation. GTFS (General Transit Feed Specification) format from Google is used to query the timetables from public transportation companies. 
 
 \begin{description}
   \item[+] includes public transportation ( GTFS)
@@ -193,6 +201,7 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 \centering
 \includegraphics[width=3in]{otp-ss.png}
 \caption{Screenshot OTP - Kapfenberg}
+\label{fig:otp}
 \end{figure}
  
  The graph builder is controlled by an XML configuration. For big regions (i.e. the Country Austria) a lot of RAM is needed. OpenTripPlanner is intended for small and medium geographic areas, but with huge amount of RAM also big areas are possible. The safety parameter was invented for bicycles. There can be a notification, if the osm key surface  has a specific value (i.e. 'Caution: muddy!'). The safe value 1 is default. Very safe streets can have a value below 1 and for dangerous streets can be give a value more than 1. The distance of a street segment will be multiplied with the safe value. I.e. A ten times more dangerous street will have the the length of the street times 10. \\
@@ -202,26 +211,25 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 \lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={GraphBuilder OTP}]{otp-config.xml}
 
 
-\subsection{OSRM}
-
-\cite{luxen-vetter-2011} generates the graph on the settings in a profile.lua file
+\subsection{OpenSourceRoutingMachine}
+The project is separated in the routing service and a web frontend(Figure \ref{fig:osrm}). The routing service is written in C++ and needs less hardware resources. The routing graph can be influenced by a profile configuration. The profile is a lua script file. So even more sophisticated configurations can be done. In the standard configuration no safety properties are in the profile files. The route can be influenced by the speed parameter, so a safe street can have a higher speed value. Of course this will also change the travel time. \\
 \begin{description}
-\item[+]very fast
+\item[+]very fast\cite{luxen-vetter-2011}
 \item[+]lua script language to configure the routing graph 
 \item[+]shortest path calculation contraction hierarchies, faster then dijskta algorithm
 \item[+]blacklist of street, which should not be used
 \item[+]delivers gpx track or turn instruction list in json,
 \item[+]nice Web frontend, supports multiple targets,
-\item[-] no safety properties, influence the route with different speed parameters, a safe street get a high speed value
+\item[-]no safety properties
 \end{description}
 
 \begin{figure}
 \centering
 \includegraphics[width=3in]{osrm-ss.png}
 \caption{Screenshot OSRM - Kapfenberg}
+\label{fig:osrm}
 \end{figure}
-
-C++,No turn instruction if the road name stays the same. Made for cars
+No turn instruction if the road name stays the same. Made for cars
 
 
 \begin{table}
