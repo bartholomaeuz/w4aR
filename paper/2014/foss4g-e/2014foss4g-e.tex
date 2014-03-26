@@ -132,7 +132,7 @@ This work focus most on point 4 of the list. The influence of the user requireme
 Following questions has to be asked to choose the right routing service for the comparison.\\
 Is the routing service free of charge and is it possible to adopt it for blind pedestrian routing? Is it possible to put additional information in the routing graph? Can OpenStreetMap data be used to generate the routing graph? Can the routing tool be configured to support blind pedestrians? A Web-Frontend is not required for the blind users, but it is important for the developer. It is easier to test different routes and it gives you a good impression about the output of the routing service. 
 \section{Comparison between different routing tools}
-In a first selection 3 tools has been found, which fulfil the requirements. For sure there are more tools around, but these three are well documented and active.
+In a first selection three tools has been found, which fulfil the requirements. For sure there are more tools around, but these three are well documented and active.
 \begin{itemize}
   \item PgRouting
   \item OpenTripPlanner
@@ -142,7 +142,7 @@ In a first selection 3 tools has been found, which fulfil the requirements. For 
   
 \subsection{Generation of the routing graph}
 
-All routing services in this comparison use OpenStreetMap data to generate the routing graph. It is important that the routing graph has all the OpenStreetMap attributes, which are important for blind people. The process is illustrated in figure \ref{fig:overview}
+All routing services in this comparison use OpenStreetMap data to generate the routing graph. It is important that the routing graph has all the OpenStreetMap attributes, which are important for blind people. The process is illustrated in Figure \ref{fig:overview}.
 
 \begin{figure}
 \centering
@@ -155,37 +155,37 @@ All routing services in this comparison use OpenStreetMap data to generate the r
 \subsection{pgRouting}
 pgRouting\cite{pgrouting} is an extension to the PostGIS standard. PostGIS brings spatial information to Postgres database. 
 In a workshop the combination of Geoserver and OpenLayers is shown. Also a example with QGIS is included. \\
-With some lines of code, it is easy to get a GeoJson track with  some server side programming language (i.e. PHP or Perl). So even interfaces to Smartphone Applications should be manageable. But the lack of turn instructions makes the difference to other software tools.  
+It is easy to get a GeoJson track with  some server side programming language (i.e. PHP or Perl). So even interfaces to Smartphone Applications should be manageable. But the lack of turn instructions makes the difference to other routing tools.  
 
 \begin{description}
   \item[+] routing network or route can be displayed with GIS software (i.e. QGIS)
   \item[+] many different routing algorithms (Dijkstra, A-Star and Shooting Star)  are implemented
-  \item[+] standardised routing graph (POSTGIS)
+  \item[+] standardised routing graph (PostGIS)
   \item[-] a lot of components (postgres, postgis, osm2pgrouting, GeoServer, OpenLayers) from different vendors   
   \item[-] difficult to set up the environment 
   \item[-] no turn instructions
   \item[-] no mature Web-Frontend  
 \end{description} 
 
-The OSM data can be tranfered to Postgres database by the program osm2pgrouting. Priorities of roads can be set in a Xml configuration file (Listing \ref{lst:pgr}).
+The OSM data can be transferred to Postgres database by the program osm2pgrouting. Priorities of roads can be set in a Xml configuration file (Listing \ref{lst:pgr}).
 
 \lstinputlisting[language=Xml,basicstyle=\footnotesize,breaklines=true,frame=lines,caption={osm2pgrouting Mapconfig.xml},label={lst:pgr}]{mapconfig_for_cars.xml}
 
 \subsection{OpenTripPlaner}
 \label{subsec:otp}
  
-The OpenTripPlaner servlet runs on any standards-compliant Java web server. It is a complete bundle with includes a REST API and a Webfrontend(Figure \ref{fig:otp}). The Webfrontend let you set an start and end point and with button a route can be requested. Drag and Drop the markers as with the OSRM Webfrontend is not possible. The route request takes much more time as with the OSRM routing service. For other Applications like Smartphone Apps there is a well dokumentated REST API, where a route can be requested with many parameters. One routing process can handle multiple profiles (i.e. Walking, Bicycle and Car) and intermodal transportation. GTFS (General Transit Feed Specification) format from Google is used to query the timetables from public transportation companies. 
+The OpenTripPlaner servlet runs on a Java web server. It is a complete bundle with includes a Rest Api and a Web-Frontend(Figure \ref{fig:otp}). Over  the Web-Frontend a start and an end point can be set and with a button click the route can be requested. To Drag-and-Drop the markers as with the OSRM Web-Frontend is not possible. The route request takes much more time as with the OSRM routing service. For other Applications like Smartphone Apps there is a well dokumentated REST API, where a route can be requested with many parameters. One routing process can handle multiple profiles (i.e. Walking, Bicycle and Car) and intermodal transportation. GTFS (General Transit Feed Specification) format from Google is used to query the timetables from public transportation companies. 
 
 \begin{description}
   \item[+] includes public transportation ( GTFS)
-  \item[+] intermodal (i.e. walk and public transportation) transportaion
-  \item[+] well documented REST API
-  \item[+] separated JAVA web-apps (Webfrontend and Routing Service)
-  \item[+] less dependencies (any standards-compliant Java web server)
-  \item[+] multiple profies (Bike, walk, transit) handled by a single routing process
+  \item[+] intermodal (i.e. combine walk and public transport) trips
+  \item[+] well documented Rest Api
+  \item[+] separated Java web-apps (Web-Frontend and Routing Service)
+  \item[+] less dependencies (any Java web server)
+  \item[+] multiple profiles (Bike, walk, transit) handled by a single routing process
   \item[+] walk speed selectable
   \item[+] safety options in the configure file available
-  \item[+] easy to configuration with xml file
+  \item[+] easy configuration with Xml file
   \item[+] Logging and Debugging 
   \item[-] slow route calculation
   \item[-] need much resources to build routing graph   
@@ -198,7 +198,7 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 \label{fig:otp}
 \end{figure}
  
- The graph builder is controlled by an XML (Listing \ref{lst:otp}) configuration. For big regions (i.e. the Country Austria) a lot of RAM is needed. OpenTripPlanner is intended for small and medium geographic areas, but with huge amount of RAM also big areas are possible. The safety parameter was invented for bicycles. There can be a notification, if the osm key surface  has a specific value (i.e. 'Caution: muddy!'). The safe value 1 is default. Very safe streets can have a value below 1 and for dangerous streets can be give a value more than 1. The distance of a street segment will be multiplied with the safe value. I.e. A ten times more dangerous street will have the the length of the street times 10. \\
+ The graph builder is controlled by an XML (Listing \ref{lst:otp}) configuration. For medium regions (i.e. the Country Austria) a lot of RAM is needed. OpenTripPlanner is intended for small and medium geographic areas, but with huge amount of RAM also big areas are possible. The safety parameter was invented for bicycles. There can be a notification, if the osm key surface  has a specific value (i.e. 'Caution: muddy!'). The safe value of 1 is default. Very safe streets can have a value below 1 and for dangerous streets a value more than 1 can be given. The distance of a street segment will be multiplied with the safe value. A ten times more dangerous street will have the the length of the street times 10. \\
  With a permission key all transportation types (i.e. Pedestrian, Bicycle, ..) can be put on a white list. So street segment can be accessed by this type of transportation. \\
  It should be possible to convert the bicycle safety features to pedestrian safety features.
  
@@ -206,15 +206,16 @@ The OpenTripPlaner servlet runs on any standards-compliant Java web server. It i
 
 
 \subsection{OpenSourceRoutingMachine}
-The project is separated in the routing service and a web frontend(Figure \ref{fig:osrm}). The routing service is written in C++ and needs less hardware resources. The routing graph can be influenced by a profile configuration. The profile is a lua script file. So even more sophisticated configurations can be done. In the standard configuration no safety properties are in the profile files. The route can be influenced by the speed parameter, so a safe street can have a higher speed value.  This will also change the travel time. For every profile a single instance of the routing machine is needed.  \\
+The project is separated in the routing service and a Web-Frontend(Figure \ref{fig:osrm}). The routing service is written in C++ and needs less hardware resources. The routing graph can be influenced by a profile configuration. The profile is a lua script file. So even more sophisticated configurations can be done, but it is more complex as a Xml configuration file. In the standard configuration no safety properties are in the profile files. The route can be influenced by the speed parameter, so a safe street can have a higher speed value.  This will also change the travel time. For every profile a single instance of the routing machine is needed.  \\
 \begin{description}
-\item[+]very fast\cite{luxen-vetter-2011}
+\item[+]very fast\cite{luxen-vetter-2011}, need less resources
 \item[+]lua script language to configure the routing graph 
 \item[+]shortest path calculation contraction hierarchies, faster then dijskta algorithm
 \item[+]blacklist of street, which should not be used
-\item[+]delivers Gpx track or turn instruction list in Json,
-\item[+]nice Web frontend, supports multiple targets,
-\item[-]no safety properties
+\item[+]delivers Gpx track or turn instruction list in Json
+\item[+]nice Web-Frontend
+\item[+]supports multiple targets in the route request
+\item[-]no safety properties available
 \end{description}
 
 \begin{figure}
@@ -225,7 +226,7 @@ The project is separated in the routing service and a web frontend(Figure \ref{f
 \end{figure}
 
 The route can be configured for blind pedestrians, but there will be no turn instruction if the road name/type stays the same. So even on an orthogonal crossing there can be no turn instruction, if the road stays the same. 
-The missing turn instruction can be found on the Figure \ref{fig:osrm}. There is only one turn instructions, instead of two. \\
+The missing turn instruction can be found on Figure \ref{fig:osrm}. There is only one turn instructions, instead of two. The same problem occour in the OpenTripPlaner (Figure \ref{fig:otp}).\\
 The route response is well documented. It delivers all track points and for some track points a turn instruction. Some example turn instructions can be found on Table \ref{tab:rlist}. \\
 The route request is handled by a Plug-in. New features can also be added by a Plug-in.
 
@@ -242,32 +243,30 @@ No&Turn Angle&Road Name/Type&Distance&Heading\\ \hline
 \label{tab:rlist}
 \end{table}
 
-In the profile (Listing \ref{lst:osrm}) settings different speeds for all kind of roads can be set. Additional OSM meta data can be delivered in the road name field. On every different name a turn instruction is triggered. 
+In the profile settings (Listing \ref{lst:osrm}) different speeds for all kind of roads can be set. Additional OSM meta data can be delivered in the road name field. On every different road name or type a turn instruction is triggered. 
 
 
 \lstinputlisting[basicstyle=\footnotesize,breaklines=true,frame=lines,caption={OSRM profile.lua},label={lst:osrm}]{foot-osrm.lua}
 
 \section{System Design}
-The system was designed as Server/Client Infrastructure. The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and an destination. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The json file contains the Gpx Track and turn instructions on specific track points. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West). A network connection is needed for every route request. 
-
-\section{First Results and Tests}
-The Android App development started in the same time as the comparison between the routing machines. It was clear that the Application request a route with a start and a stop position and the server replies with a well structured (i.e. XML or JSON) format. \\
-The user interface and the navigation instructions are much more important on the smartphone. The routing server should be replaceable. 
-By the way a OSRM Routing Service was chosen for the first test. On the Application side a target position can be selected from a list and the actual position was used as start position. After the routing request, the response is displayed in a new list (figure ~\ref{fig:app}). \\
-The user can explore the whole trip on the screen. Turn instruction by turn instruction. The distance to the next crossing is spoken periodically. If the proximity of the crossing point was reached the turn instruction was told. \\
-
-
- 
 
 \begin{figure}
 \centering
 \includegraphics[width=3in]{System-Design2.png}
 \caption{System Design}
+\label{fig:sd}
 \end{figure}
+The system was designed as Server/Client Infrastructure (Figure \ref{fig:sd}). The network graph is held on the server and the routing calculation is also done on the server.  The client ask for the best route with a start point and a destination point. Even multiple destination can be handled by the server. Then the server replies with a Json formated file. The Json file contains the Gpx Track and all turn instructions. The turn instructions contain the turn angle, the street name or road type, the distance to the next turn instruction and the heading information (i.e. North West). A network connection is needed for every route request. 
+
+\section{First Results and Tests}
+The Android App development started at the same time as the comparison between the routing machines. It was clear that the Application request a route with a start and a stop position and the server replies with a well structured (i.e. Xml or Json) format. \\
+The user interface and the navigation instructions are much more important on the smartphone. The routing server should be replaceable by any routing service in the comparison. By the way a OSRM Routing Service was chosen for the first test. On the Application side a target position can be selected from a list and the actual position was used as start position. After the routing request, the response is displayed in a new list (Figure ~\ref{fig:app}). \\
+The user can explore the whole trip on the screen. Turn instruction by turn instruction. The distance to the next crossing point is spoken periodically. If the proximity of the crossing point was reached the turn instruction was told. \\
+
 
 \begin{figure}
 \centering
-\includegraphics[width=3in]{App2.png}
+\includegraphics[width=2.5in]{App2.png}
 \caption{Android App}
 \label{fig:app}
 \end{figure}
@@ -275,20 +274,11 @@ The user can explore the whole trip on the screen. Turn instruction by turn inst
 
 \section{Conclusion}
 
-All the three software products can be adopted for blind pedestrian routing, but the implementations differ a lot. So a question can be which programming language (Java, C++ or SQL) is your favourite. OpenTripPlaner is the only Software with a safety parameter and has the most features. On the other hand the package needs a huge amount of resources. OpenSourceRoutingMaschine performs very good and supports flexible configuration options. But to make use of all the function a good knowledge of the software structure is needed. PgRouting use a standardized road network (Postgis) but has more focus on different routing algorithms.
+All three software products can be adopted for blind pedestrian routing, but the implementations differ a lot. So a question can be which programming language (Java, C++ or SQL) is your favourite. OpenTripPlaner is the only Software with a safety parameter and has the most features. On the other hand the package needs a huge amount of resources. OpenSourceRoutingMaschine performs very good and supports flexible configuration options. But to make use of all the function a good knowledge of the software structure is needed. PgRouting use a standardized road network (Postgis) but has more focus on different routing algorithms.
 
 
 \section{Future work}
-The first version was just a prove of concept. The main focus was on the user interface and on a stable server and client communication. The navigation has to be  improved a lot. There has to be a mode where blind people can follow a track in a park without much kerbs. Also a module is needed to get information about the near environment (i.e. Position of the road or building. This information could not be found in the route. There have to be turn instructions where the road stays the same, but makes a curve (i.e. priority roads). \\
-Side walks and Streets are closed to each other. It is important that the starting point do not snap to the Street in front the Side walk. \\
-And an Evaluation of the priority of foot ways has to be done. 
-
-
-\section{Acknowledgements}
-The overall project manager is the University of Applied Sciences FH-JOANNEUM in Kapfenberg, Austria. One focus of the project ways4all is to support visually impaired and blind people in their daily lives with the help of usual smartphones. Additional equipment is a no goal of the project. One module focus on indoor and outdoor navigation. \\
-Project participants are: Wiener Linien, OEBB and four blind and handicapped organisations. The project is subsidized by the Austrian Federal Ministry
-for Transport, Innovation and Technology (BMVIT) and the
-Austrian Research Promotion Agency (FFG).
+The first version was just a prove of concept. The main focus was on the user interface on the smartphone side and on a stable server and client communication. The navigation has to be improved a lot. There has to be a mode where blind people can follow a track in a park without much orientation kerbs. Also a module is needed to get information about the near environment (i.e. Position of the road or building. This information could not be found in the route. There have to be turn instructions where the road stays the same, but makes a curve (i.e. priority roads). And an evaluation of the priority of foot ways has to be done. 
 
 %
 % The following two commands are all you need in the
