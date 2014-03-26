@@ -233,7 +233,10 @@ The project is separated in the routing service and a web frontend(Figure \ref{f
 
 The route can be configured for blind pedestrians, but there will be no turn instruction if the road name/type stays the same. So even on an orthogonal crossing there can be no turn instruction, if the road stays the same. 
 The missing turn instruction can be found on the Figure \ref{fig:osrm}. There is only one turn instructions, instead of two. \\
-The route response is well documented. It delivers all track points and for some track points a turn instruction. Some example turn instructions can be found on Table \ref{tab:rlist}. \\ 
+The route response is well documented. It delivers all track points and for some track points a turn instruction. Some example turn instructions can be found on Table \ref{tab:rlist}. \\
+The route request is handled by a Plug-in. New features can also be added by a Plug-in.
+
+ 
 
 \begin{table}
 \centering
@@ -285,7 +288,7 @@ All the three software products can be adopted for blind pedestrian routing, but
 \section{Future work}
 The first version was just a prove of concept. The main focus was on the user interface and on a stable server and client communication. The navigation has to be  improved a lot. There has to be a mode where blind people can follow a track in a park without much kerbs. Also a module is needed to get information about the near environment (i.e. Position of the road or building. This information could not be found in the route. There have to be turn instructions where the road stays the same, but makes a curve (i.e. priority roads). \\
 Side walks and Streets are closed to each other. It is important that the starting point do not snap to the Street in front the Side walk. \\
-And an Evaluation of the priority of footways has to be done. 
+And an Evaluation of the priority of foot ways has to be done. 
 
 
 \section{Acknowledgements}
