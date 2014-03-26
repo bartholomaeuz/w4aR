@@ -94,20 +94,14 @@ For visually impaired and blind people the fastest or the shortest route is not 
 OpenStreetMap contains very useful information for visually impaired and blind people. It make it possible to find a safe route from a start point to an end point, which includes acoustical traffic signals and safe sidewalks.Also additional information can improve the navigation. If the user is told that the building is on the right hand side, he/she can verify the information and improve the positioning. If there comes a dangerous situation a warning should occur. In front of a waste basket, a poller or a hydrant. \\ 
 Today there are many Open Source Routing Systems available. Many of them focus on car navigation, bicycle navigation and pedestrian navigation. Some of them even include multi-modal routing in combination with public transportation systems. In this paper a comparison between different open source routing engines (PgRouting,OpenTripPlanner and OpenSourceRoutingMachine) is made. Is it possible to transfer the technology from car navigation to blind pedestrian navigation?
 \section{User Requirements}
-navigation device should be a smartphone with no additional device
-The user interface should be barrier free [Elmar Paper]
-How to enter a target address on a smartphone
-Less disturbance with the environment
-during navigation free hands for the blindman stick an additional stuff
-The navigation App should also work in the background
+The navigation device should be a smartphone. The user group often has less money and could not afford additional devices. The user interface on the smartphone should be barrier free and useable for blind and visually impaired people. During the navigation process the hands should be free for the blindman stick an additional stuff. The user should feel less disturbance and the surrounding traffic and the enviroment should be recognisable.  
 
 \section{Related Work in blind pedestrian routing and navigation}
 The pioneer in free GPS navigation software is Loadstone GPS\cite{loadstone}. It is running on Symbian mobile phones and uses an external bluetooth GPS receiver. The product is very popular in the community of blind and visually impaired people. Nevertheless there is no active development anymore. \\
-On the iOS platform Blindsquare\cite{blindsquare} is a very popolar App. It uses point of interest information from foursquare and OpenStreetMap and allow a navigation to the POIs. The actual price is about 24 US Dollar. \\
+On the iOS platform Blindsquare\cite{blindsquare} is a very popolar App. It uses point of interest information from foursquare and OpenStreetMap and allow navigation to the PointOfInterests. The actual price is about 24 US Dollar. \\
 OsmAnd (OSM Automated Navigation Directions) is a map and navigation application with OpenStreetMap (OSM) data. All map data can be stored on your device's memory card for offline use. Via your device's GPS, OsmAnd offers routing, with optical and voice guidance, for car, bike, and pedestrian. It has a Turn-by-turn voice guidance and does an automatic re-routing whenever you deviate from the route. OsmAnd works well for blind people with Talkback when the uses pre stored favourites. The greatest challenge for the blind people is the destination input, which is only possible with standard keyboard.  \\
-'Ready.Set.Access'\cite{weyrer} is a master thesis about intermodal door-to-door application for people with disabilities. The implementation was done with the OpenTripPlanner (section \ref{subsec:otp}) Routing Software. It combines indoor and outdoor navigation. The main focus is on wheelchair accessibility. The project also analyses the topography of a region and flat slops are preferred. In the thesis a geospatial barrier catalogue with six categories (Way Types, Surface Types, Way Related Attribues, Node Information, General Attributes and Public Transport) was one result. \\
-Sven Leitinger\cite{sven:osm} from Salzburg Research wrote a guideline to enhance the OSM Data with blind related attributes. He explained most of the OSM tag, which are useful for blind people. The guideline describes the mapping process to record blind related attributes in OpenStreetMap.
-The scientific paper\cite{Volkel:2008} Route CheckR focus on route finding for mobility impaired people. A safety factor was embedded in the route calculation. It is recommended to read this paper, if you are interested in safety routing algorithms. The algorithms are not scope of this work.  
+'Ready.Set.Access'\cite{weyrer} is a master thesis about intermodal door-to-door application for people with disabilities. The implementation was done with the OpenTripPlanner (section \ref{subsec:otp}) Routing Software. It combines indoor and outdoor navigation. The main focus is on wheelchair accessibility. The project also analyses the topography of a region and flat slops are preferred. In the thesis a geospatial barrier catalogue with six categories (Way Types, Surface Types, Way Related Attribues, Node Information, General Attributes and Public Transport) was made. \\
+Sven Leitinger\cite{sven:osm} from Salzburg Research wrote a guideline to enhance the OSM Data with blind related attributes. He explained most of the OSM tag, which are useful for blind people. The scientific paper\cite{Volkel:2008} RouteCheckR focus on route finding for mobility impaired people. A safety factor was embedded in the route calculation. It is recommended to read this paper, if you are interested in routing algorithms with includes safety parameters. These kind of algorithms are not scope of this work.  
 
 \section{OpenStreetMap Data}
 OpenSteetMap was founded in the year 2004. In this last 10 years a enormous map material was generated by volunteers. The map data is free available without any licence cost. Therefore a lot of open source routing tools work with OSM data. \\
@@ -116,7 +110,7 @@ The map network consist of nodes and ways like a routing graph with special attr
 \subsection{Interesting Features for blind people}
 Some of the main attributes for blind pedestrians. The information should be given to the users during the navigation.
 \begin{itemize}
-  \item highway=pedestrian,living\_street,path,footway,steps,elevator
+  \item highway=pedestrian,living\_street,path, \\ footway,steps,elevator
   \item surface=paved,unpaved,asphalt,concrete,concrete:plates, \\ fine\_gravel,metal,paving\_stones
   \item footway=sidewalk,kerb,tactile\_paving
   \item crossing,taffic\_signals:sound  
@@ -136,7 +130,7 @@ This work focus most on point 4 of the list. The influence of the user requireme
 
 \section{Prerequisites}
 Following questions has to be asked to choose the right routing service for the comparison.\\
-Is the routing service free of charge and is it possible to adopt it for blind pedestrian routing? What additional information can be in the routing graph? Can it use OpenStreetMap data to generate the routing graph? Can the routing tool be configured to support blind pedestrians? The Web-Frontend is not required for the blind users, but it is important for the developer. It is easier to test different routes and it gives you a good impression about the output of the routing service. 
+Is the routing service free of charge and is it possible to adopt it for blind pedestrian routing? Is it possible to put additional information in the routing graph? Can OpenStreetMap data be used to generate the routing graph? Can the routing tool be configured to support blind pedestrians? A Web-Frontend is not required for the blind users, but it is important for the developer. It is easier to test different routes and it gives you a good impression about the output of the routing service. 
 \section{Comparison between different routing tools}
 In a first selection 3 tools has been found, which fulfil the requirements. For sure there are more tools around, but these three are well documented and active.
 \begin{itemize}
