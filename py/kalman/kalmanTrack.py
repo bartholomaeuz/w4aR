@@ -170,6 +170,18 @@ ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
 ky.append(kf.GetCurrentState()[2,0])
 kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P0.1
+routeX=2.5;
+routeY=2.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 3;
+newestY = 3;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
 #P1
 routeX=5;
 routeY=5;
@@ -177,6 +189,18 @@ x.append(routeX);
 y.append(routeY);
 newestX = 4;
 newestY = 5;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P1.1
+routeX=7.5;
+routeY=7.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 8;
+newestY = 7;
 nx.append(newestX);
 ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
@@ -194,6 +218,18 @@ ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
 ky.append(kf.GetCurrentState()[2,0])
 kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P2.1
+routeX=12.5;
+routeY=12.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 11;
+newestY = 12;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
 #P3
 routeX=15;
 routeY=15;
@@ -201,6 +237,18 @@ x.append(routeX);
 y.append(routeY);
 newestX = 17;
 newestY = 14;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P3.1
+routeX=17.5;
+routeY=17.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 18;
+newestY = 19;
 nx.append(newestX);
 ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
@@ -218,6 +266,18 @@ ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
 ky.append(kf.GetCurrentState()[2,0])
 kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P4.1
+routeX=22.5;
+routeY=22.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 24;
+newestY = 23;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
 #P5
 routeX=25;
 routeY=25;
@@ -225,6 +285,18 @@ x.append(routeX);
 y.append(routeY);
 newestX = 25;
 newestY = 22;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P5.1
+routeX=27.5;
+routeY=22.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 29;
+newestY = 23;
 nx.append(newestX);
 ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
@@ -242,6 +314,18 @@ ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
 ky.append(kf.GetCurrentState()[2,0])
 kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P6.1
+routeX=32.5;
+routeY=17.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 34;
+newestY = 20;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
 #P7
 routeX=35;
 routeY=15;
@@ -249,6 +333,18 @@ x.append(routeX);
 y.append(routeY);
 newestX = 32;
 newestY = 16;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P7.1
+routeX=37.5;
+routeY=12.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 37;
+newestY = 12;
 nx.append(newestX);
 ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
@@ -266,6 +362,18 @@ ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
 ky.append(kf.GetCurrentState()[2,0])
 kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P8.1
+routeX=42.5;
+routeY=7.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 43;
+newestY = 9;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
 #P9
 routeX=45;
 routeY=5;
@@ -273,6 +381,18 @@ x.append(routeX);
 y.append(routeY);
 newestX = 42;
 newestY = 3;
+nx.append(newestX);
+ny.append(newestY);
+kx.append(kf.GetCurrentState()[0,0])
+ky.append(kf.GetCurrentState()[2,0])
+kf.Step(control_vector,numpy.matrix([[newestX],[routeX],[newestY],[routeY]]))
+#P9.1
+routeX=47.5;
+routeY=2.5;
+x.append(routeX);
+y.append(routeY);
+newestX = 48;
+newestY = 1;
 nx.append(newestX);
 ny.append(newestY);
 kx.append(kf.GetCurrentState()[0,0])
