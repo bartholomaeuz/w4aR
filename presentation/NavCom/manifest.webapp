@@ -1,0 +1,14 @@
+{
+  "name": "OSM2",
+  "description": "Firefox OS app example to manage the shopping list using the Iris framework.",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/mado/img/icon-128.png"
+  },
+  "developer": {
+    "name": "mado",
+    "url": "http://www.geoinfos.at"
+  },
+  "default_locale": "en",
+  "installs_allowed_from": ["*"]
+}
