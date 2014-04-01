@@ -21,3 +21,5 @@ echo "### RUN OSRM PROCESS"
 
 # OSRM Files können auch von HAMINA auf MALTA kopiert werden
 scp austria-latest.osrm* mado@malta:/home/mado/Project-OSRM
+
+# check links on http://hamina/mado and http://malta/mado
