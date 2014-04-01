@@ -1,0 +1,103 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>OSRM Route</title>
+</head>
+<body>
+
+
+<div id="route">
+
+</div>
+<script type="text/javascript">
+
+function route(data)
+{  
+    var text='';	
+	
+	console.log(data.route_instructions.length);
+	var entry = '';
+	var len=data.route_instructions.length;		
+	var len2;	
+	text += '<table border="1">';
+	for(var i=0;i<len;i++){
+		entry = data.route_instructions[i];
+		
+		console.log(entry.length);
+		len2=entry.length;
+		text += '<tr>';
+		for(var j=0;j<len2;j++){
+		
+			console.log(entry[j]);
+			if(j==0){
+				text += '<td>';
+				switch(entry[j])
+				{
+				case '2':
+				  text += '<img src="../images/slight-right.png" alt="left" height="65" width="65">';
+				  break;
+				case '3':
+				  text += '<img src="../images/turn-right.png" alt="left" height="65" width="65">';
+				  break;
+				case '4':
+				  text += '<img src="../images/sharp-right.png" alt="left" height="65" width="65">';
+				  break; 
+				case '5':
+				  text += '<img src="../images/u-turn.png" alt="left" height="65" width="65">';
+				  break;  		
+				case '8':
+				  text += '<img src="../images/slight-left.png" alt="left" height="65" width="65">';
+				  break;
+				case '7':
+				  text += '<img src="../images/turn-left.png" alt="left" height="65" width="65">';
+				  break;
+				case '6':
+				  text += '<img src="../images/sharp-left.png" alt="left" height="65" width="65">';
+				  break; 								  
+				case '1':  
+				case '10':
+				  text += '<img src="../images/continue.png" alt="head" height="65" width="65">';
+				  break;
+				case '15':
+				  text += '<img src="../images/target.png" alt="head" height="65" width="65">';
+				  break;
+				
+				default:
+				  text += entry[j];
+				}
+				
+				
+				text += '</td>';
+			}else{
+				if( j == 1 || j==5 || j==6){ 
+					text += '<td>';
+					text += entry[j];
+					text += '</td>';
+				}
+			}
+		}
+		text += '</tr>';
+		
+		
+	}  
+	text += '</table>';
+	document.getElementById('route').innerHTML=text;
+}
+
+var script = document.createElement('script');
+
+script.src = 'http://malta.fh-joanneum.at:5000/viaroute?loc=47.099702,15.399423&loc=47.099870,15.397776&instructions=true&alt=false&compression=false&jsonp=route'
+
+document.body.appendChild(script);
+
+
+
+
+	
+	
+</script>
+
+
+</body>
+
+</html>
