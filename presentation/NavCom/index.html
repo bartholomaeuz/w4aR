@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>w4me</title>
+		<title>NavCom</title>
 
-		<meta name="description" content="SQL Beispiele">
+		<meta name="description" content="Fahrzeugkommunikation">
 		<meta name="author" content="Markus Dornhofer">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,7 +59,8 @@
 					<ul>
 						
 						<li>Projekt ways4all (Video)</li>
-						<li>Fahrzeugkommunikationsmodul</li>					
+						<li>Fahrzeugkommunikationsmodul V1-V5</li>
+						<li>OpenWrt Entwicklung</li>					
 						<li>Diskussion</li>
 					</ul>
 					
@@ -80,6 +81,7 @@
 						<li>433 Mhz Transceiver im Autobus</li>
 						<li>Unidirektional</li>
 						<li>Anzeige f&uuml;r den Fahrer</li>
+						<li>Funktionen: Einstiegswunsch und Ausstiegswunsch</li>
 					</ul>
 					
 					<aside class="notes">
@@ -94,7 +96,8 @@
 						<li>Bluetooth/433 Mhz Gateway</li>
 						<li>433 Mhz Transceiver im Autobus</li>
 						<li>Bidirektional</li>
-						<li>Anzeige f&uuml;r den Fahrer</li>	
+						<li>Anzeige f&uuml;r den Fahrer</li>
+						<li>Funktionen: Einstiegswunsch und Ausstiegswunsch</li>						
 					</ul>
 					
 					<aside class="notes">
@@ -110,7 +113,7 @@
 						<li>IBIS (RS232) Sniffer</li>			
 						<li>Bidirektional</li>
 						<li>Relay f&uuml;r Haltewunsch</li>
-						<li>Au&szlig;enlautsprecher</li>	
+						<li>Funktionen: Linie+Endhaltestelle,N&auml;chste Haltestelle und Au&szlig;enlautsprecher</li>	
 					</ul>
 					
 					<aside class="notes">
@@ -126,7 +129,7 @@
 						<li>RS232 Kommunikation</li>			
 						<li>Bidirektional</li>
 						<li>Anzeige f&uuml;r den Fahrer</li>
-						<li>Au&szlig;enlautsprecher</li>
+						<li>Funktionen: Linie+Endhaltestelle, Hoch-/Niederflur, Einstiegswunsch, Ausstiegswunsch, N&auml;chste Haltestelle und Au&szlig;enlautsprecher</li>
 						<li>3 Autobusse unterwegs damit</li>
 					</ul>
 					
@@ -143,7 +146,7 @@
 						<li>RS232 Kommunikation</li>			
 						<li>Bidirektional</li>
 						<li>Anzeige f&uuml;r den Fahrer</li>
-						<li>Au&szlig;enlautsprecher</li>
+						<li>Funktionen: Linie+Endhaltestelle, Hoch-/Niederflur, Einstiegswunsch, Ausstiegswunsch, N&auml;chste Haltestelle und Au&szlig;enlautsprecher</li>
 					</ul>
 					
 					<aside class="notes">
@@ -169,6 +172,7 @@
 				<section>
 					<h2>Openwrt Entwicklung (1)</h2>
 					<ul>
+						<li>billige Hardware (~50€)</li>
 						<li>ca. 4 MB freier Flash</li>
 						<li>ca. 400MHz CPU</li>
 						<li>Packetmanager opkg</li>
@@ -193,8 +197,10 @@
 						<ul>
 							<li>System Calls (Fork,Read,Write)</li>
 							<li>Interprocess-Communication mit<br>
-							Named-Pipes oder Shared-Memory</li>	
-						</ul>	
+							Named-Pipes oder Shared-Memory</li>
+							<li>unified configuration interface (uci)</li>							
+						</ul>
+						<li>secure shell (scp) deployment</li>
 					</ul>					
 					<aside class="notes">
 					
