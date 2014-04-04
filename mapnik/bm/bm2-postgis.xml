@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Map background-color="#f2efe9" srs="+proj=latlong +datum=WGS84">
+	<FontSet name="book-fonts">
+		<Font face-name="DejaVu Sans Book" />
+	</FontSet>
+	<Style name="railways">
+		<Rule>
+			<Filter>[railway] &lt;&gt; ''</Filter>
+			<LineSymbolizer stroke="#808080" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+		</Rule>
+		<Rule>
+			<Filter>[railway] &lt;&gt; ''</Filter>
+			<TextSymbolizer fontset-name="book-fonts"
+				size="9" fill="#000" halo-radius="1" placement="line" >
+			[name]</TextSymbolizer>
+		</Rule>
+	</Style>
+	<Layer name="railways" status="on" srs="+proj=latlong +datum=WGS84">
+		<StyleName>railways</StyleName>
+		<Datasource>
+			<Parameter name="table">
+			(select way from planet_osm_line where railway is not null) as road</Parameter>
+			<Parameter name="type">postgis</Parameter>
+			<Parameter name="port">5432</Parameter>
+			<Parameter name="user">pgr</Parameter>
+			<Parameter name="password">pgr</Parameter>
+			<Parameter name="dbname">pgr</Parameter>
+		</Datasource>
+	</Layer>
+</Map>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map>
+
+<Map background-color="#FFF">
+
+<Style name="roads">
+  <Rule>
+    <LineSymbolizer stroke="red" stroke-width="1" />
+  </Rule>
+</Style>
+
+<Layer name="roads" status="on">
+  <StyleName>roads</StyleName>
+  <Datasource>
+    <Parameter name="table">
+      (select way from planet_osm_line where highway is not null) as road
+    </Parameter>
+   <Parameter name="type">postgis</Parameter>
+			<Parameter name="port">5432</Parameter>
+			<Parameter name="user">pgr</Parameter>
+			<Parameter name="password">pgr</Parameter>
+			<Parameter name="dbname">pgr</Parameter>
+  </Datasource>
+</Layer>
+</Map>
