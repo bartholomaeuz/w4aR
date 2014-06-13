@@ -90,9 +90,17 @@ Today's smartphones are more than just a telephone. With built-in positions sens
 \keywords{GIS, Routing, Navigation, Blind, Pedestrian}
 
 \section{Introduction}
-For visually impaired and blind people the fastest or the shortest route is not the important fact, they prefer the safest route from a start point to an end point. There are some navigation systems for blind users available on the market, but no system makes much use of additional data for blind users. 
-OpenStreetMap contains very useful information for visually impaired and blind people. It make it possible to find a safe route from a start point to an end point, which includes acoustical traffic signals and safe sidewalks. Also additional information can improve the navigation. If the user is told that the building is on the right hand side, he/she can verify the information and improve the positioning. If there comes a dangerous situation, in the proximity of a waste basket, a poller or a hydrant, a warning should occur. \\ 
-Today there are many Open Source Routing Systems available. Many of them focus on car navigation, bicycle navigation and pedestrian navigation. Some of them even include multi-modal routing in combination with public transportation systems. In this paper a comparison between different open source routing engines (PgRouting,OpenTripPlanner and OpenSourceRoutingMachine) is made. Is it possible to transfer the technology from car navigation to blind pedestrian navigation?
+For visually impaired and blind people the fastest or the shortest route is not the important fact, they prefer the safest route from a start point to an end point (In figure \ref{fig:sd} there are also other user-groups, which prefer specialized routing). There are some navigation systems for blind users available on the market, but no system makes much use of additional data for blind users. 
+OpenStreetMap contains very useful information for visually impaired and blind people. It make it possible to find a safe route from a start point to an end point, which includes acoustical traffic signals and safe sidewalks. Also additional information can be used for navigation. If the user is told that the building is on the right hand side, he/she can verify the information and improve the positioning. If there is a dangerous situation(i.e. the proximity of a waste basket, a poller or a hydrant) a warning should occur. \\ 
+Today there are some mature open source routing engines available. Many of them focus on car navigation, bicycle navigation and pedestrian navigation. Some of them even include multi-modal routing in combination with public transportation systems. In this paper a comparison between different open source routing engines (PgRouting,OpenTripPlanner and OpenSourceRoutingMachine) is made. Is it possible to transfer the technology from car navigation to blind pedestrian navigation?
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{PONS-Routing-Overview.png}
+\caption{Specialized routing}
+\label{fig:pons}
+\end{figure}
+
 \section{User Requirements}
 The navigation device should be a smartphone. The user group often has less money and could not afford additional devices. The user interface on the smartphone should be barrier free and useable for blind and visually impaired people. During the navigation process the hands should be free for the blindman stick an additional stuff. The user should feel less disturbance and the surrounding traffic and the enviroment should be recognisable.  
 

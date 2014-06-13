@@ -19,7 +19,7 @@
 		<StyleName>railways</StyleName>
 		<Datasource>
 			<Parameter name="type">osm</Parameter>
-			<Parameter name="file">bm.osm</Parameter>
+			<Parameter name="file">austria-latest.osm</Parameter>
 		</Datasource>
 	</Layer>
 </Map>
