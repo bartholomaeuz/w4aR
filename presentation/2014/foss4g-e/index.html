@@ -150,8 +150,8 @@
 					
 					</aside>
 				</section>
-				</section>
-					<section>
+				
+				<section>
 				<!-- <h2>Pedestrian Routing</h2> --> 
 				<center>
 					<table>
@@ -171,6 +171,89 @@
 					
 					</aside>
 				</section>
+				
+					<section>
+				<!-- <h2>Pedestrian Routing</h2> --> 
+				<center>
+					<table border="2">
+					<tr>
+					<td>
+						<h3>OSRM</h3>	
+						<ul>
+						<li>blind people want to be independent</li>
+						<li>accuracy of GPS (~10m)</li>
+						<li>make use of OpenStreetMap data</li>
+					</ul>
+				
+					</td>
+					<td>	
+					<h3>OSRM</h3>
+						<ul>
+						<li>blind people want to be independent </li>
+						<li>accuracy of GPS (~10m)</li>
+						<li>make use of OpenStreetMap data</li>
+					</ul>
+				
+					</td>
+					<td>	
+					<h3>OSRM</h3>
+						<ul>
+						<li>blind people want to be independent </li>
+						<li>accuracy of GPS (~10m)</li>
+						<li>make use of OpenStreetMap data</li>
+					</ul>
+				
+					</td>
+					
+					<tr>	
+					</table>
+					</center>
+					
+					<aside class="notes">
+					
+					</aside>
+				</section>
+				
+					<section>
+					<h2>OSRM Configuration</h2>
+					
+					<pre><code>
+walking_speed = 5
+speeds = {
+  ["residential"] = walking_speed* 0.5, 
+  ["living_street"] = walking_speed, 
+  ["track"] = walking_speed* 0.8,
+  ["path"] = walking_speed* 0.8,
+  ["steps"] = walking_speed* 0.5,
+  ["pedestrian"] = walking_speed,
+  ["footway"] = walking_speed
+}
+surface_speeds = {
+  ["fine_gravel"] =   walking_speed* 0.75,
+  ["gravel"] =        walking_speed* 0.75,  
+  ["sand"] =          walking_speed* 0.5
+}
+					</code></pre>
+					
+				</section>
+				
+					<section>
+					<h2>OTP Configuration</h2>
+					
+					<pre><code>
+&lt;bean class="WayPropertyPicker"&gt;
+ &lt;property name="specifier" value="highway=motorway;cycleway=lane" /&gt;
+  &lt;property name="properties"&gt;
+   &lt;bean class="WayProperties"&gt;
+    &lt;property name="safetyFeatures" value="1.5,1.5" /&gt;
+    &lt;property name="permission" value="BICYCLE_AND_CAR" /&gt;
+   &lt;/bean&gt;
+  &lt;/property&gt;
+&lt;/bean&gt;
+					</code></pre>
+					
+				</section>
+			
 				
 				
 				<section>
