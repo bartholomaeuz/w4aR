@@ -68,12 +68,24 @@
 					
 					</aside>
 				</section>
+					<section>
+				 <h2>First Step</h2> 
+					<ul>
+					
+						<img width="1038" height="504" src="mado/pic/gerwei.PNG" alt="Car">
 				
+						
+					</ul>
+					
+					<aside class="notes">
+					
+					</aside>
+				</section>
 				<section>
 					<h2>Prerequisites</h2>
 					<ul>
-						<li>blind people want to be independent <br> and getting used to Smartphones</li>
-						<li>accuracy of GPS (~10m)</li>
+						<li>no additional devices</li>
+						<li>accuracy of the location ~10m (GPS,WLAN)</li>
 						<li>make use of OpenStreetMap data</li>
 					</ul>
 				
@@ -112,33 +124,6 @@
 					</aside>
 				</section>
 				<section>
-				 <h2>Footway Intersection (OSM Wiki)</h2> 
-					<ul>
-						
-						<img width="404" height="381" src="mado/pic/FootwayIntersection.jpg" alt="Car">
-					
-						
-					</ul>
-					
-					<aside class="notes">
-					
-					</aside>
-				</section>
-				<section>
-				 <h2>Gerwei</h2> 
-					<ul>
-					
-						<img width="1038" height="504" src="mado/pic/gerwei.PNG" alt="Car">
-				
-						
-					</ul>
-					
-					<aside class="notes">
-					
-					</aside>
-				</section>
-				
-				<section>
 				 <h2>Pedestrian Routing</h2> 
 					<ul>
 					
@@ -151,11 +136,178 @@
 					
 					</aside>
 				</section>
+				
+				
+				<section>
+					<h2>Comparison</h2>
+					<ul>
+						<li>PgRouting</li>
+						<li>OpenTripPlanner (OTP)</li>									
+						<li>OpenSourceRoutingMachine (OSRM)</li>
+					</ul>
+					
+					<aside class="notes">
+					
+					</aside>
+				</section>
+				
+				<section>
+					<h2>PgRouting</h2>
+					<ul>
+						<li>Postgres Extension</li>
+						<li>PostGIS Standard</li>									
+						<li>Plugin QGIS</li>
+						<li>Demo with GeoServer & OpenLayers</li>
+						<li>XML Configuration</li>
+					</ul>
+					
+					<aside class="notes">
+					
+					</aside>
+				</section>
+				<section>
+					<h2>osm2pgrouting Configuration</h2>
+					
+					<pre><code>
+&lt;configuration&gt;
+  &lt;type name="highway" id="1"&gt;
+    &lt;class name="motorway" id="101" priority="1.0" maxspeed="130" /&gt;   
+    &lt;class name="primary" id="106"  priority="1.15" maxspeed="90" /&gt;    
+    &lt;class name="residential" id="112"  priority="2.5" maxspeed="50" /&gt;
+    &lt;class name="living_street" id="113"  priority="3" maxspeed="20" /&gt;   
+  &lt;/type&gt; 
+&lt;/configuration&gt;
+					</code></pre>
+					
+				</section>
+				
+				<section>
+					<h2>OpenTripPlaner</h2>
+					<ul>
+						<li>Java Web Server</li>
+						<li>Web Frontend</li>									
+						<li>General Transit Feed Specification (GTFS)</li>
+						<li>Android App (not for blind people)</li>
+						<li>XML Configuration</li>
+					</ul>
+					
+					<aside class="notes">
+					
+					</aside>
+				</section>
+					<section>
+					<h2>OTP Configuration</h2>
+					
+					<pre><code>
+&lt;bean class="WayPropertyPicker"&gt;
+ &lt;property name="specifier" value="highway=motorway;cycleway=lane" /&gt;
+  &lt;property name="properties"&gt;
+   &lt;bean class="WayProperties"&gt;
+    &lt;property name="safetyFeatures" value="1.5,1.5" /&gt;
+    &lt;property name="permission" value="BICYCLE_AND_CAR" /&gt;
+   &lt;/bean&gt;
+  &lt;/property&gt;
+&lt;/bean&gt;
+					</code></pre>
+					
+				</section>
+				<section>
+					<h2>OpenSourceRoutingMachine</h2>
+					<ul>
+						<li>C++ Application</li>
+						<li>Web Frontend (Leaflet)</li>									
+					    <li>LUA Configuration</li>	
+					</ul>
+					
+					<aside class="notes">
+					
+					</aside>
+				</section>
+						<section>
+					<h2>OSRM Configuration</h2>
+					
+					<pre><code>
+walking_speed = 5
+speeds = {
+  ["residential"] = walking_speed* 0.5, 
+  ["living_street"] = walking_speed, 
+  ["track"] = walking_speed* 0.8,
+  ["path"] = walking_speed* 0.8,
+  ["steps"] = walking_speed* 0.5,
+  ["pedestrian"] = walking_speed,
+  ["footway"] = walking_speed
+}
+surface_speeds = {
+  ["fine_gravel"] =   walking_speed* 0.75,
+  ["gravel"] =        walking_speed* 0.75,  
+  ["sand"] =          walking_speed* 0.5
+}
+					</code></pre>
+					
+				</section>
+				
+							<section>
+				<!-- <h2>Pedestrian Routing</h2> --> 
+				<center>
+					<table border="2">
+					<tr>
+					<td>
+						<h3>PGR</h3>	
+						<ul>
+						<li>standardized graph</li>
+						<li>query surrounding info</li>						
+						<li>no direct API</li>
+					</ul>
+				
+					</td>
+					<td>	
+					<h3>OTP</h3>
+					<ul>
+						<li>Android App</li>						
+						<li>turn instructions</li>
+						<li>safety settings</li>
+					</ul>
+				
+					</td>
+					<td>	
+					<h3>OSRM</h3>
+						<ul>
+						<li>very fast, less resources</li>
+						<li>blacklist of streets</li>
+						<li>turn instructions</li>
+					</ul>
+				
+					</td>
+					
+					<tr>	
+					</table>
+					</center>
+					
+					<aside class="notes">
+					
+					</aside>
+				</section>
+				
+				
 					<section>
 				<!-- <h2>Pedestrian Routing</h2> --> 
 					<ul>
 						
 						<img width="952" height="567" src="mado/pic/wien1.PNG" alt="Ped">
+					
+						
+					</ul>
+					
+					<aside class="notes">
+					
+					</aside>
+				</section>
+				
+				<section>
+				 <h2>Footway Intersection (OSM Wiki)</h2> 
+					<ul>
+						
+						<img width="404" height="381" src="mado/pic/FootwayIntersection.jpg" alt="Car">
 					
 						
 					</ul>
@@ -186,87 +338,10 @@
 					</aside>
 				</section>
 				
-					<section>
-				<!-- <h2>Pedestrian Routing</h2> --> 
-				<center>
-					<table border="2">
-					<tr>
-					<td>
-						<h3>OSRM</h3>	
-						<ul>
-						<li>blind people want to be independent</li>
-						<li>accuracy of GPS (~10m)</li>
-						<li>make use of OpenStreetMap data</li>
-					</ul>
+		
 				
-					</td>
-					<td>	
-					<h3>OSRM</h3>
-						<ul>
-						<li>blind people want to be independent </li>
-						<li>accuracy of GPS (~10m)</li>
-						<li>make use of OpenStreetMap data</li>
-					</ul>
+			
 				
-					</td>
-					<td>	
-					<h3>OSRM</h3>
-						<ul>
-						<li>blind people want to be independent </li>
-						<li>accuracy of GPS (~10m)</li>
-						<li>make use of OpenStreetMap data</li>
-					</ul>
-				
-					</td>
-					
-					<tr>	
-					</table>
-					</center>
-					
-					<aside class="notes">
-					
-					</aside>
-				</section>
-				
-					<section>
-					<h2>OSRM Configuration</h2>
-					
-					<pre><code>
-walking_speed = 5
-speeds = {
-  ["residential"] = walking_speed* 0.5, 
-  ["living_street"] = walking_speed, 
-  ["track"] = walking_speed* 0.8,
-  ["path"] = walking_speed* 0.8,
-  ["steps"] = walking_speed* 0.5,
-  ["pedestrian"] = walking_speed,
-  ["footway"] = walking_speed
-}
-surface_speeds = {
-  ["fine_gravel"] =   walking_speed* 0.75,
-  ["gravel"] =        walking_speed* 0.75,  
-  ["sand"] =          walking_speed* 0.5
-}
-					</code></pre>
-					
-				</section>
-				
-					<section>
-					<h2>OTP Configuration</h2>
-					
-					<pre><code>
-&lt;bean class="WayPropertyPicker"&gt;
- &lt;property name="specifier" value="highway=motorway;cycleway=lane" /&gt;
-  &lt;property name="properties"&gt;
-   &lt;bean class="WayProperties"&gt;
-    &lt;property name="safetyFeatures" value="1.5,1.5" /&gt;
-    &lt;property name="permission" value="BICYCLE_AND_CAR" /&gt;
-   &lt;/bean&gt;
-  &lt;/property&gt;
-&lt;/bean&gt;
-					</code></pre>
-					
-				</section>
 			
 				
 				
