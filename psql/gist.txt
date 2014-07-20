@@ -1,0 +1,67 @@
+http://www.postgresql.org/docs/9.1/static/pgtrgm.html
+
+sudo apt-get install postgresql-contrib
+psql -U pgr -h localhost pgr
+pgr=# create extension pg_trgm;
+CREATE EXTENSION
+pgr=# CREATE INDEX name_idx ON ways USING gist (name gist_trgm_ops);
+CREATE INDEX
+pgr=# select name,name <-> 'Radelsdorfer Strasse' as w from ways order by w limit 5;
+        name         |    w     
+---------------------+----------
+ Radelsdorfer Straße | 0.291667
+ Radelsdorfer Straße | 0.291667
+ Radelsdorfer Straße | 0.291667
+ Radelsdorferstraße  | 0.461538
+ Radelsdorferstraße  | 0.461538
+(5 Zeilen)
+
+pgr=# select name,name <-> 'Radelsdorf Strasse' as w from ways order by w limit 5;
+        name         |    w     
+---------------------+----------
+ Radelsdorfer Straße |     0.44
+ Radelsdorfer Straße |     0.44
+ Radelsdorfer Straße |     0.44
+ Radelsdorferstraße  | 0.538462
+ Radelsdorferstraße  | 0.538462
+(5 Zeilen)
+
+pgr=# select name,name <-> 'Ratesldorer Strasse' as w from ways order by w limit 5;
+        name         |    w     
+---------------------+----------
+ Radelsdorfer Straße |     0.75
+ Radelsdorfer Straße |     0.75
+ Radelsdorfer Straße |     0.75
+ J.- Strauß-Gasse    |     0.75
+ Rathausgasse        | 0.777778
+(5 Zeilen)
+
+pgr=# select name from ways where name % 'Radelsdorferstrass'  limit 5;      
+  name         
+---------------------
+ Radelsdorfer Straße
+ Radelsdorfer Straße
+ Radelsdorfer Straße
+ Radelsdorferstraße
+ Radelsdorferstraße
+(5 Zeilen)
+
+pgr=# select name from ways where name % 'Radelsdorferstrass'  limit 10;
+        name         
+---------------------
+ Radelsdorfer Straße
+ Radelsdorfer Straße
+ Radelsdorfer Straße
+ Radelsdorferstraße
+ Radelsdorferstraße
+ Radelsdorferstraße
+ Radelsdorferstraße
+(7 Zeilen)
+
+pgr=# select distinct name from ways where name % 'Radelsdorferstrass'  limit 10;
+        name         
+---------------------
+ Radelsdorfer Straße
+ Radelsdorferstraße
+(2 Zeilen)
+

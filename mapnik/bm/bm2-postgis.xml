@@ -21,6 +21,7 @@
 			<Parameter name="table">
 			(select way from planet_osm_line where railway is not null) as road</Parameter>
 			<Parameter name="type">postgis</Parameter>
+			<Parameter name="host">localhost</Parameter>
 			<Parameter name="port">5432</Parameter>
 			<Parameter name="user">pgr</Parameter>
 			<Parameter name="password">pgr</Parameter>
