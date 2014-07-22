@@ -5,3 +5,13 @@ select distinct name,similarity(name,'Kapenberg') as s from planet_osm_point whe
  create function top10(text) returns table(ort text,sim real) as $$
  select distinct name,similarity(name,$1) from planet_osm_point where name % $1 order by similarity(name,$1) desc limit 10;
  $$ LANGUAGE SQL;
+
+ select name from top100('Kaapfenberger');
+ 
+create function top100(text) returns setof planet_osm_point as $$          select * from planet_osm_point where name % $1 order by similarity(name,$1) desc limit 100;
+ $$ LANGUAGE SQL;
+ 
+ select name from top100('Kaapfenberger');
+
+ 
+ 
