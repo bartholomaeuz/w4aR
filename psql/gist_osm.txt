@@ -1,0 +1,3 @@
+create extension pg_trgm ;
+create index name_idx on planet_osm_point using gist (name gist_trgm_ops);
+select distinct name,similarity(name,'Kapenberg') as s from planet_osm_point where name % 'Kapenberg' order by s desc limit 10;
