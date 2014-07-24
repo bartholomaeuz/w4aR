@@ -13,5 +13,7 @@ create function top100(text) returns setof planet_osm_point as $$          selec
  
  select name from top100('Kaapfenberger');
 
- 
+create function plzStr(text,text) returns table(str text,sim real) as $$          
+ select distinct street,similarity(street,$2) from place where street % $2 and postcode like $1 order by similarity(street,$2) desc limit 10;
+$$ LANGUAGE SQL;
  
