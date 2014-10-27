@@ -1,0 +1,1 @@
+ select distinct name,similarity(name,'Kaphenberg') from planet_osm_point where name % 'Kaphenberg' order by similarity(name,'Kaphenberg') desc limit 10;
