@@ -1,4 +1,4 @@
 apt-get install postgresql-contrib
 pgr# create extension pg_trgm
-pgr# create index name_idx on ways using gist(name gist_trgm_ops);
+pgr# create index name_idx on planet_osm_line using gist(name gist_trgm_ops);
 
