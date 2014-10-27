@@ -1,0 +1,126 @@
+login as: mado
+mado@biograd's password:
+Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.13.0-32-generic x86_64)
+
+mado@biograd:~/mapnik-psql$ psql -U gis gis
+Password for user gis:
+psql (9.3.4)
+Type "help" for help.
+
+gis=# select * from top10('Kaphenberg');
+     ort      |   sim
+--------------+----------
+ Kapfenberg   | 0.571429
+ Kappenberg   | 0.571429
+ Kalenberg    |      0.5
+ Kapellenberg |      0.5
+ Kastenberg   | 0.466667
+ Kahlenberg   | 0.466667
+ Katzenberg   | 0.466667
+ Kaltenberg   | 0.466667
+ Kuchenberg   | 0.466667
+ KrÃ¤henberg   | 0.466667
+(10 rows)
+
+gis=# select * from top10('Bruck')
+gis-# ;
+     ort      |   sim
+--------------+----------
+ Bruck        |        1
+ Brucki       |    0.625
+ Bruck/Mur    |      0.6
+ Badbruck     |      0.5
+ Bruck-Fusch  |      0.5
+ Bruckner     |      0.5
+ Brucheck     |      0.5
+ Bruckhof     |      0.5
+ In der Bruck | 0.461538
+ Breitenbruck | 0.461538
+(10 rows)
+
+gis=# select * from top10('Bruck an')
+;
+          ort          |   sim
+-----------------------+----------
+ Bruck                 | 0.666667
+ Bruck an der Mur      | 0.529412
+ Bruck/Mur             | 0.461538
+ Brucki                | 0.454545
+ Bruck an der Leitha   |     0.45
+ Bruck an der Aschach  |     0.45
+ Anton Bruckner        | 0.411765
+ Bruck an der Mur West | 0.409091
+ 8601 Bruck an der Mur | 0.409091
+ Bruck-Fusch           |      0.4
+(10 rows)
+
+gis=# \f
+Field separator is "|".
+gis=# \d
+              List of relations
+ Schema |        Name        | Type  | Owner
+--------+--------------------+-------+-------
+ public | geography_columns  | view  | gis
+ public | geometry_columns   | view  | gis
+ public | planet_osm_line    | table | gis
+ public | planet_osm_point   | table | gis
+ public | planet_osm_polygon | table | gis
+ public | planet_osm_roads   | table | gis
+ public | raster_columns     | view  | gis
+ public | raster_overviews   | view  | gis
+ public | spatial_ref_sys    | table | gis
+(9 rows)
+
+gis=# \df
+gis=# \df top10
+                             List of functions
+ Schema | Name  |     Result data type      | Argument data types |  Type
+--------+-------+---------------------------+---------------------+--------
+ public | top10 | TABLE(ort text, sim real) | text                | normal
+(1 row)
+
+gis=# \ef top10
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/ed
+  2. /bin/nano        <---- easiest
+  3. /usr/bin/vim.basic
+  4. /usr/bin/vim.tiny
+
+Choose 1-4 [2]: 2
+No changes
+gis=# \df
+gis=# select * from top10('Hollhammerweg')
+gis-# ;
+             ort              |   sim
+------------------------------+----------
+ Hammerwerk                   | 0.388889
+ Hollerweger                  | 0.368421
+ Hoferweg                     | 0.352941
+ Pollhammeredt                | 0.333333
+ Hammer                       |   0.3125
+ Traun O. FlÃ¶zerweg/Hammerweg | 0.310345
+ Hotel Hammer                 |      0.3
+ HofÃ¤ckerweg                  |      0.3
+(8 rows)
+
+
+gis=# explain analyse select * from top10('Kapenberg')
+;
+gis=# select * from top10('Kapenberg')
+;
+        ort         |   sim
+--------------------+----------
+ Kappenberg         |     0.75
+ Kapellenberg       | 0.642857
+ Kapfenberg         | 0.615385
+ Kalenberg          | 0.538462
+ Gumpenberg Kapelle | 0.526316
+ Kastenberg         |      0.5
+ Kaltenberg         |      0.5
+ Katzenberg         |      0.5
+ Kahlenberg         |      0.5
+ Kraxenberg Kapelle | 0.473684
+(10 rows)
+
+gis=#
