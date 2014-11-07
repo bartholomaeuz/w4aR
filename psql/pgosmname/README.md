@@ -5,8 +5,8 @@
 sudo make install
 
 ##psql
-create extension pg_trgm;
-create extension pgosmname;
+>create extension pg_trgm;
+>create extension pgosmname;
 
 
 ## git
