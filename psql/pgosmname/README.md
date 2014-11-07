@@ -1,12 +1,12 @@
 #PG OSM NAME
 ====
 
-##INSTALL EXTENSION PG OSM 
+##INSTALL EXTENSION PG OSM NAME
 sudo make install
 
-##sql
-postgres> create extension pg_trgm;
-postgres> create extension pgosmname;
+##psql
+create extension pg_trgm;
+create extension pgosmname;
 
 
 ## git
