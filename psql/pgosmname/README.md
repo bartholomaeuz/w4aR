@@ -24,6 +24,8 @@
 >select name from on_test_place_3('Bruck an Mur') limit 5;
 >
 >select name,ST_X(way),ST_Y(way) from on_test_place_3('Bruck an Mur') limit 5;
+>
+> select on_test_place_4('Kappenberg') limit 10;
 
 
 ## git
