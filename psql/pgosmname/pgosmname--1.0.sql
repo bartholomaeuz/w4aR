@@ -1,8 +1,4 @@
 -- pg osm name EXTENSION 
-\echo Use "CREATE EXTENSION pgosmname" to load this file. \quit
-
--- create extension pg_trgm ;
-
 create index ON_name_idx on planet_osm_point using gist (name gist_trgm_ops);
 
 create function ON_top10(text) returns table(ort text,sim real) as $$
