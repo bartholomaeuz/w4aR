@@ -1,5 +1,5 @@
 EXTENSION = pgosmname
-DATA = pgosmname.sql
+DATA = pgosmname--1.0.sql
 
 PG_CONFIG = pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
