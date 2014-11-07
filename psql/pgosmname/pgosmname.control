@@ -1,0 +1,4 @@
+# pgosmname extension
+comment = 'A key/value pair data type'
+default_version = '1.0'
+relocatable = true
