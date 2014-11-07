@@ -1,5 +1,5 @@
 -- pg osm name EXTENSION 
-create or replace index ON_name_idx on planet_osm_point using gist (name gist_trgm_ops);
+create index ON_name_idx on planet_osm_point using gist (name gist_trgm_ops);
 
 
 create  or replace function ON_test_place_2(text) returns table(place text) as $$
