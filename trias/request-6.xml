@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trias version="0.1" xmlns="trias" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ServiceRequest>
+		<siri:RequestTimestamp>2015-01-14T12:00:00</siri:RequestTimestamp>
+		<siri:RequestorRef>mdv</siri:RequestorRef>
+		<RequestPayload>
+			<LocationInformationRequest>
+				<InitialInput>
+					<LocationName>Bruck Mur LKH</LocationName>
+				</InitialInput>
+			</LocationInformationRequest>
+		</RequestPayload>
+	</ServiceRequest>
+</Trias>
