@@ -1,0 +1,590 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 1.4 (12/4/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,a4paper]{geometry} % Page margins
+
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+% Index
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{background}}} % Image background
+\centering
+\vspace*{9cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+Geoinformationssysteme\par % Book title
+\vspace*{1cm}
+{\Huge Markus Dornhofer}\par % Author name
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+\noindent \textsc{Published by Publisher}\\ % Publisher
+
+\noindent \textsc{book-website.com}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{contour_wms_preview_800x400}
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapterimage{contour_wms_preview_800x400}
+
+\chapter{Text Chapter}
+
+\section{Paragraphs of Text}\index{Paragraphs of Text}
+
+\lipsum[1-7] % Dummy text
+
+%------------------------------------------------
+
+\section{Citation}\index{Citation}
+
+This statement requires citation \cite{book_key}; this one is more specific \cite[122]{article_key}.
+
+%------------------------------------------------
+
+\section{Lists}\index{Lists}
+
+Lists are useful to present information in a concise and/or ordered way\footnote{Footnote example...}.
+
+\subsection{Numbered List}\index{Lists!Numbered List}
+
+\begin{enumerate}
+\item The first item
+\item The second item
+\item The third item
+\end{enumerate}
+
+\subsection{Bullet Points}\index{Lists!Bullet Points}
+
+\begin{itemize}
+\item The first item
+\item The second item
+\item The third item
+\end{itemize}
+
+\subsection{Descriptions and Definitions}\index{Lists!Descriptions and Definitions}
+
+\begin{description}
+\item[Name] Description
+\item[Word] Definition
+\item[Comment] Elaboration
+\end{description}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
+
+\chapter{In-text Elements}
+
+\section{Theorems}\index{Theorems}
+
+This is an example of theorems.
+
+\subsection{Several equations}\index{Theorems!Several Equations}
+This is a theorem consisting of several equations.
+
+\begin{theorem}[Name of the theorem]
+In $E=\mathbb{R}^n$ all norms are equivalent. It has the properties:
+\begin{align}
+& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+\end{align}
+\end{theorem}
+
+\subsection{Single Line}\index{Theorems!Single Line}
+This is a theorem consisting of just one line.
+
+\begin{theorem}
+A set $\mathcal{D}(G)$ in dense in $L^2(G)$, $|\cdot|_0$. 
+\end{theorem}
+
+%------------------------------------------------
+
+\section{Definitions}\index{Definitions}
+
+This is an example of a definition. A definition could be mathematical or it could define a concept.
+
+\begin{definition}[Definition name]
+Given a vector space $E$, a norm on $E$ is an application, denoted $||\cdot||$, $E$ in $\mathbb{R}^+=[0,+\infty[$ such that:
+\begin{align}
+& ||\mathbf{x}||=0\ \Rightarrow\ \mathbf{x}=\mathbf{0}\\
+& ||\lambda \mathbf{x}||=|\lambda|\cdot ||\mathbf{x}||\\
+& ||\mathbf{x}+\mathbf{y}||\leq ||\mathbf{x}||+||\mathbf{y}||
+\end{align}
+\end{definition}
+
+%------------------------------------------------
+
+\section{Notations}\index{Notations}
+
+\begin{notation}
+Given an open subset $G$ of $\mathbb{R}^n$, the set of functions $\varphi$ are:
+\begin{enumerate}
+\item Bounded support $G$;
+\item Infinitely differentiable;
+\end{enumerate}
+a vector space is denoted by $\mathcal{D}(G)$. 
+\end{notation}
+
+%------------------------------------------------
+
+\section{Remarks}\index{Remarks}
+
+This is an example of a remark.
+
+\begin{remark}
+The concepts presented here are now in conventional employment in mathematics. Vector spaces are taken over the field $\mathbb{K}=\mathbb{R}$, however, established properties are easily extended to $\mathbb{K}=\mathbb{C}$.
+\end{remark}
+
+%------------------------------------------------
+
+\section{Corollaries}\index{Corollaries}
+
+This is an example of a corollary.
+
+\begin{corollary}[Corollary name]
+The concepts presented here are now in conventional employment in mathematics. Vector spaces are taken over the field $\mathbb{K}=\mathbb{R}$, however, established properties are easily extended to $\mathbb{K}=\mathbb{C}$.
+\end{corollary}
+
+%------------------------------------------------
+
+\section{Propositions}\index{Propositions}
+
+This is an example of propositions.
+
+\subsection{Several equations}\index{Propositions!Several Equations}
+
+\begin{proposition}[Proposition name]
+It has the properties:
+\begin{align}
+& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+\end{align}
+\end{proposition}
+
+\subsection{Single Line}\index{Propositions!Single Line}
+
+\begin{proposition} 
+Let $f,g\in L^2(G)$; if $\forall \varphi\in\mathcal{D}(G)$, $(f,\varphi)_0=(g,\varphi)_0$ then $f = g$. 
+\end{proposition}
+
+%------------------------------------------------
+
+\section{Examples}\index{Examples}
+
+This is an example of examples.
+
+\subsection{Equation and Text}\index{Examples!Equation and Text}
+
+\begin{example}
+Let $G=\{x\in\mathbb{R}^2:|x|<3\}$ and denoted by: $x^0=(1,1)$; consider the function:
+\begin{equation}
+f(x)=\left\{\begin{aligned} & \mathrm{e}^{|x|} & & \text{si $|x-x^0|\leq 1/2$}\\
+& 0 & & \text{si $|x-x^0|> 1/2$}\end{aligned}\right.
+\end{equation}
+The function $f$ has bounded support, we can take $A=\{x\in\mathbb{R}^2:|x-x^0|\leq 1/2+\epsilon\}$ for all $\epsilon\in\intoo{0}{5/2-\sqrt{2}}$.
+\end{example}
+
+\subsection{Paragraph of Text}\index{Examples!Paragraph of Text}
+
+\begin{example}[Example name]
+\lipsum[2]
+\end{example}
+
+%------------------------------------------------
+
+\section{Exercises}\index{Exercises}
+
+This is an example of an exercise.
+
+\begin{exercise}
+This is a good place to ask a question to test learning progress or further cement ideas into students' minds.
+\end{exercise}
+
+%------------------------------------------------
+
+\section{Problems}\index{Problems}
+
+\begin{problem}
+What is the average airspeed velocity of an unladen swallow?
+\end{problem}
+
+%------------------------------------------------
+
+\section{Vocabulary}\index{Vocabulary}
+
+Define a word to improve a students' vocabulary.
+
+\begin{vocabulary}[Word]
+Definition of word.
+\end{vocabulary}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+
+\chapterimage{contour_wms_preview_800x400}
+
+\chapter{Presenting Information}
+
+\section{Table}\index{Table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER HISTORY
+%----------------------------------------------------------------------------------------
+
+\chapterimage{clipper_1854} % Chapter heading image
+
+\chapter{Einleitung}
+
+
+\section{Kataster und Liegenschaftsverwaltung}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=2.0]{gis-steiermark-kl}
+\caption{Zonen}
+\end{figure}
+
+\section{Biologie - Populationen}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{kegelrobben-2011}
+\caption{Kegelrobben}
+\end{figure}
+
+\section{Navigation}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.0]{biograd2-small-1000px}
+\caption{Seekarte}
+\end{figure}
+
+\section{Bev\"olkerungsver\"anderung in der Steiermark}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=2.0]{stmk-bev13-30-kl}
+\caption{Bev\"olkerungsver\"anderung in der Steiermark}
+\end{figure}
+
+\chapter{Geschichte}
+
+\section{1854: Cholera Epidemie}
+Im Jahre 1854 gab es in London (Stadtteil Soho) eine Cholera Epidemie. Dr. Snow konnte mit Hilfe einer Aufzeichnung der toten Personen auf den betroffenen Brunnen schlie{\ss}en und damit die Epidemie eind\"ammen.
+
+\begin{figure}[h]
+\centering\includegraphics[scale=1.0]{Snow-cholera-map}
+\caption{London - Cholera Karte}
+\end{figure}
+
+\section{1962: Canadian Geographic Information System}
+Die kanadische Regierung suchte nach einen Verwaltungstool ihrer riesigen Waldfl\"achen und schuff damit einen Vorl\"aufer moderner GIS Systeme auf EDV Basis. 
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER INTRO
+%----------------------------------------------------------------------------------------
+
+\chapterimage{contour_wms_preview_800x400} % Chapter heading image
+
+\chapter{Position und Projektion}
+
+\begin{figure}[h]
+\centering\includegraphics[scale=1.0]{Latitude_kl}
+\caption{Shapefile}
+\end{figure}
+
+\begin{figure}[h]
+\centering\includegraphics[scale=1.0]{Longitude_kl}
+\caption{Shapefile}
+\end{figure}
+
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{Netzentwuerfe-Kartenprojektionen}
+\caption{Shapefile}
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER GEODATA
+%----------------------------------------------------------------------------------------
+
+
+\chapter{Geodaten}
+Geodaten sind Informationen die einen Punkt auf der Erde zugewiesen sind. Sie enthalten auch eine r\"aumliche Information.
+\section{Raster und Vektordaten}\index{RasterundVektordaten}
+
+\begin{figure}[h]
+\centering\includegraphics[scale=0.6]{vector-raster}
+\caption{Shapefile}
+\end{figure}
+
+\subsection{Rasterdaten}
+
+Rasterdaten sind zum Beispiel:
+\begin{itemize}
+\item Orthofotos
+\item Luftaufnahmen mit Radar oder Laser (z.B. SRTM)
+\item Eingescannte Karten (z.B. historische Karten)
+\end{itemize}
+
+\subsection{Vektordaten}
+
+Vektordaten werden eingesetzt bei:
+\begin{itemize}
+\item Navigation
+\item Kartendienste
+\item OpenStreetMap
+\end{itemize}
+
+Vektordaten können mit einem Quantisierungsverlust in ein Rasterbild umgewandelt werden. Bei OpenstreetMap werden die Vektordaten kontinuierlich in neuen Kartenkacheln (Siehe WMTS)
+umgewandelt. \\
+Oft m\"ochte man durch eine Umwandlung auch die Originalvektordaten sch\"utzen und nur Zugriff auf die Rasterdaten zulassen.   
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER DATA FORMAT
+%----------------------------------------------------------------------------------------
+
+\chapter{Datenformate}
+\section{Dateien}\index{Dateien}
+Dateien k\"onnen lokal auf dem PC verwaltet werden. Ein gemeinsames Bearbeiten der Dateien ist schwierig. Wird die Datenmenge sehr gro{\ss} kann es auch zu Problemen f\"uhren. Bei den meisten Personen sind Files jedoch noch immer sehr beliebt.
+\subsection{Shapefiles (SHP)}
+Geodaten werden in Shapefiles gespeichert und k\"onnen dort mit Sachdaten verkn\"upft werden.  Das format wurde von der Firma ESRI (ArcGIS) entwickelt und kann aber auch von anderen Programmen verabeitet werden.
+\begin{figure}[h]
+\centering\includegraphics[scale=2.0]{esri-daten-format_kl}
+\caption{Shapefile}
+\end{figure}
+
+
+\subsection{H\"ohen-Dateien (HGT/SRTM)}
+Hier handelt es sich um ein Rasterformat mit H\"oheninformation. Statt einen Farbwert ist hier f\"ur jedes Pixel ein H\"ohenwert gespeichert. Meist wurden dabei mit einem Radarger\"at die H\"ohe von einem Spaceshuttle vermessen(Shuttle Radar Topography Mission). 
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{contour_preview}
+\caption{H\"ohenschichtlinien}
+\end{figure}
+
+
+\subsection{GeoTiff}
+GeoTiff ist ein Bild, da{\ss} mit mehreren Punkten auf der Erde referenziert wird. Damit kann es mit anderen Geodaten dargestellt werden. Mit den Bilder kann auch offline gearbeitet werden und eignen sich besonders f\"ur kleine Bereiche. 
+
+\section{Geodatenbank}\index{Geodatenbank}
+Datenbanken bitten auch viele M\"oglichkeiten im GIS Bereich. Unter den vorhanden M\"oglichkeiten wie Zugangberechtigungen, Multiuser und Datenauswahl, gibt es auch Möglichkeiten der r\"aumlichen Analyse in der Datenbank. 
+
+\subsection{POSTGIS}
+F\"ur die freie Postgres Datenbank wurde die Erweiterung Postgis entwickelt. Damit sind auch r\"aumliche Analysen oder Abfragen in der Datenbank m\"oglich. Z.B. K\"onnten alle Lebensmittelgesch\"afte im Umkreis von 1 km abgefragt werden. Oder Zeige mir alle Gemeinegrenzen an.    
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{postgis_ohne_stil}
+\caption{OSM Daten in POSTGIS ohne Stil}
+\end{figure}
+Die Videos von Paul Ramsey dem Mitgr\"under von Postgis sind zu empfehlen. \url{http://blog.cleverelephant.ca/}
+
+\section{Webdienste}\index{Webdienste}
+F\"ur die Abfrage eines Webdienstes ist eine Verbindung zum Server (Online) notwendig. \"Uber eine URL kann einen genauere Beschreibung zum Webservice abgerufen werden. Das wird von der GIS Software automatisch gemacht, man muss nur die URL als Verbindungsparameter angeben. In den Einstellungen sind die Möglichkeiten der Projektionen, Darstellungsbereiche und Bildformate genau definiert. 
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{xml_request}
+\caption{XML Definition}
+\end{figure}
+\subsection{Web Map Service (WMS)}
+Hier werden Rasterkarten für einen bestimmten Bereich und in einer bestimmten Projektion heruntergeladen. Beim Verschieben der Karte muss jedoch immer ein neues Bild geladen werden (langsam)  Z.B. Orthofotos, Laserscans, Verkehrsstra{\ss}en, ...
+
+
+\subsection{Web Map Tile Service (WMTS)}
+Als Erweiterung zum WMS wird hier die Karte in Kacheln (Tiles) zu einer fixen Anzahl von Pixel (z.B. 256x256) aufgeteilt. Dadurch muss nicht das gesamte Bild bei einer Verschiebung nachgeladen werden sondern nur die neuen Kacheln (schneller) 
+
+
+\subsection{Web Feature Service (WFS)}
+Hier k\"onnen auch Vektorlayer \"uber ein Webservice verteilt werden.
+\footnote{Zus\"atzliche Information}
+
+
+\chapterimage{Osm-heatmap_1320x860} % Chapter heading image
+\chapter{Datenquellen}
+In der Vergangenheit war der Erwerb von Geodaten die häufigste Quelle. In den letzten Jahren hat sich viel ver\"andert. Durch Community Projekte, wie zum Beispiel OpenStreetMap werden nun viele Daten auf freiwilliger Basis erhoben. Auch Beh\"orden neigen nun dazu, dass sie Geodaten die mit \"offentlichen Geldern finanziert wurden zur Verf\"ugung stellen. Zu guter letzt ist auch durch das Smartphone die Erhebung von Daten deutlich erleichtert worden.
+\section{OpenStreetMap(2004)}
+
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{jsom_kl}
+\caption{OSM Editor}
+\end{figure}
+
+\section{OpenData(2010)}
+Unter den Begriff OpenData sind meist beh\"ordliche Daten gemeint. Ein kleiner Teil ist auch als Geodaten verf\"ugbar oder kann zuminderst mir Geodaten verkn\"upft werden (Siehe Bev\"olkerungsentwicklung). \url{http://data.gv.at/} 
+\subsection{GIS Steiermark}
+Alle Bundesl\"ander stellen allgemeine Geodaten zur Verf\"ugung. So werden vom Land Steiermark  Shapefiles der Bezirksgrenzen, der Orte, der Gemeinden, des Hauptgew\"asser und der Hauptstra{\ss}en zum Download bereitgestellt. \url{http://www.gis.steiermark.at/cms/ziel/14292094/DE/} 
+
+\subsection{Vogis Voralberg}
+In \"Osterreich wird die gr\"o{\ss}te Vielfalt von Daten vom Land Vorarlberg zur Verf\"ugung gestellt. Das liegt wahrscheinlich an der n\"ahe zur Schweiz, die auch eine gro{\ss}e GIS Geschichte hat. \\
+Das Land Vorarlberg ist auch ein finanzieller Unterst\"utzer des QGIS Projektes. \url{http://vorarlberg.at/vorarlberg/bauen_wohnen/bauen/vermessung_geoinformation/start.htm}
+\subsection{Verwaltungsgrundkarte - basemap (2012)}
+In \"Osterreich wurde eine einheitliche Verwaltungskarte der \"Offentlichkeit zug\"anglich gemacht. Sie beruht auf einen Graphenintegrationsplatform (GIP). Damit kann auch ein einheitliche Routingabfrage (z.B. Verwendung bei Pendlerrechner) erm\"oglicht werden. 
+\begin{figure}[h]
+\centering\includegraphics[scale=0.5]{arcmap_basemap}
+\caption{Basemap (WMTS)}
+\end{figure}
+
+
+
+\section{Eigene Daten}
+Zur Erhebung eigener Daten werden meist Orthofotos oder mobile GPS Ger\"ate verwendet. F\"ur Smartphones gibt es Applikationen, womit Wege mit zus\"atzlichen Informationen (z.B. Sprachnachrichten, Fotos oder Textmeldungen) aufgezeichnet werden k\"onnen.  \\
+Die Erhebung eigener Geodaten ist sehr zeitintensiv und stellt einen gro{\ss}en Kostenfaktor dar.
+
+
+\begin{figure}[h]
+\centering\includegraphics[scale=0.6]{osm_tracker}
+\caption{OSM Editor}
+\end{figure}
+
+\chapter{Werkzeuge}
+\section{ArcGIS}\index{ArcGIS}
+Die kommerzielle L\"osung der Firma ESRI hat den Namen ArcGIS. Dieses Produkt wird sehr h\"aufig bei Beh\"orden eingesetzt und hat auch seinen Preis. 
+\section{QGIS}
+QGIS ist eine OpenSource L\"osung die sehr aktiv entwickelt wird. Weitere OpenSource Projekte (z.B. GRASS GIS) werden von QGIS eingebunden. 
+Die Schnittstelle ist sehr bedienerfreundlich und alle 4 Monate wird eine neue Version ver\"offentlicht.
+\\
+Die \"Osterreicherin Anita Grasser vom AIT sitzt im Steering Komitee vom QGIS Projekt.
+\url{http://anitagraser.com/}
+\section{OSGeo}
+Unter dem Namen OSGeo wird ein Betriebssystem auf Linuxbasis vermarktet. Die Software ist kostenfrei und enth\"alt zahlreiche GIS Pakete.
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+\section*{Books}
+\addcontentsline{toc}{section}{Books}
+\printbibliography[heading=bibempty,type=book]
+\section*{Articles}
+\addcontentsline{toc}{section}{Articles}
+\printbibliography[heading=bibempty,type=article]
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+\printindex
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
