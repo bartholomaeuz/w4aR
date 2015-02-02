@@ -45,6 +45,11 @@
 
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,a4paper]{geometry} % Page margins
 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
 \usepackage{xcolor} % Required for specifying colors by name
 \definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
 
@@ -178,6 +183,37 @@ Die kanadische Regierung suchte nach einen Verwaltungstool ihrer riesigen Waldfl
 \chapterimage{contour_wms_preview_800x400} % Chapter heading image
 
 \chapter{Position und Projektion}
+
+\section{Position}
+Grunds\"atzlich kann jede Position auf der Erde mit 2 verschiedenen Winkeln angegeben werden. Die Latidute ist der Winkel von Aquator zu den Polen.
+ 
+ 
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{lat_long_globe}
+                \caption{A gull}
+                \label{fig:gull}
+        \end{subfigure}%
+     
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{Latitude_kl}
+                \caption{A tiger}
+                \label{fig:tiger}
+        \end{subfigure}
+      
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{Longitude_kl}
+                \caption{A mouse}
+                \label{fig:mouse}
+        \end{subfigure}
+        \caption{Pictures of animals}\label{fig:animals}
+\end{figure} 
+
+\begin{figure}[h]
+\centering\includegraphics[scale=1.0]{lat_long_globe}
+\caption{Shapefile}
+\end{figure}
 
 \begin{figure}[h]
 \centering\includegraphics[scale=1.0]{Latitude_kl}
