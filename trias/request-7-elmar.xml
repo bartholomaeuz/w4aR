@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trias version="0.1" xmlns="trias" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ServiceRequest>
+		<siri:RequestTimestamp>2013-01-14T12:00:00</siri:RequestTimestamp>
+		<siri:RequestorRef>mdv</siri:RequestorRef>
+		<RequestPayload>
+			<LocationInformationRequest>
+				<InitialInput>
+					<GeoPosition>
+						<Longitude>15.43837</Longitude>
+						<Latitude>47.07122</Latitude>
+					</GeoPosition>
+				</InitialInput>
+				<Restrictions>
+					<NumberOfResults>2</NumberOfResults>
+				</Restrictions>
+			</LocationInformationRequest>
+		</RequestPayload>
+	</ServiceRequest>
+</Trias>
+
