@@ -80,14 +80,15 @@
 					</p>
 				</section>
 				<section>
-					<h2>SRTM/HGT Data in QGIS</h2>
+					<h2>SRTM/HGT Data</h2>
 					<p>
-						Download Raster Data (1201x1201) ~ 90m/Pixel
-						<a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/" target="_blank">SRTM3</a>.
+						Download Raster Data (1201x1201)<br>
+						~ 90m/Pixel
+						<a href="http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Eurasia/" target="_blank">SRTM3 (US)</a>.
 					</p>
 				</section>
 				<section>
-					<h2>QGIS</h2>
+					<h2>QGIS (Raster)</h2>
 					HGT: no style
 					<p>						
 						<img width="312" height="281" src="mado/hgt-raw.png" alt="pseudo">
@@ -95,16 +96,24 @@
 				</section>
 				
 				<section>
-					<h2>QGIS</h2>
+					<h2>QGIS (Raster)</h2>
 					Style: Pseudo color (RDYlGn) -> Classify
 					<p>
 						
 						<img width="301" height="248" src="mado/hgt-pseudo.png" alt="pseudo">
 					</p>
 				</section>
-				
 				<section>
-					<h2>QGIS</h2>
+					<h2>QGIS (Raster)</h2>
+					Change Projection WGS84 -&gt; UTM (EPSG:4326 -&gt; 32633)<br>
+					cos(lat)=cos(~45°)=0.7
+					<p>
+						
+						<img width="574" height="412" src="mado/qgis.change.projection.png" alt="slope">
+					</p>
+				</section>
+				<section>
+					<h2>QGIS (Raster)</h2>
 					Grass: r.shaded.relief
 					<p>
 						
@@ -112,7 +121,7 @@
 					</p>
 				</section>
 				<section>
-					<h2>QGIS</h2>
+					<h2>QGIS (Raster)</h2>
 					Grass: r.contour.step (100)
 					<p>
 						
@@ -120,10 +129,24 @@
 					</p>
 				</section>
 				<section>
-					<h2>Hello There</h2>
+					<h2>QGIS (Raster)</h2>
+					Grass: r.lake.layer
 					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+						
+						<img width="409" height="342" src="mado/r.lake.layer.png" alt="lake">
 					</p>
+				</section>
+				<section>
+					<h2>QGIS (Raster)</h2>
+					Grass: r.slope
+					<p>
+						
+						<img width="295" height="243" src="mado/r.slope.png" alt="slope">
+					</p>
+				</section>
+				
+				<section>
+					<h1>THE END</h1>					
 				</section>
 
 				<!-- Example of nested vertical slides -->
