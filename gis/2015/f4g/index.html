@@ -237,6 +237,18 @@
 						<img width="731" height="402" src="mado/hydro-wms.PNG" alt="wms">
 					</p>
 				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## POSTGIS (SQL)
+
+						Query the area of the countries
+
+						```
+						select admin,st_area(the_geom::geography)/100000 
+						from ne_10m_admin_0_countries order by admin
+						```
+					</script>
+				</section>
 			
 				<section>
 					<h1>THE END</h1>					
