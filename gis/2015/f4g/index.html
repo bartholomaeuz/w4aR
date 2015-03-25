@@ -138,6 +138,7 @@
 				<section>	
 					<h2>QGIS</h2>
 					<ul>
+						<li>runs on Windows,Linux (Android) and OS X </li>
 						<li><a href="mado/qgis-1.0.0_a-gentle-gis-introduction_en.pdf" target="_blank">Education material (by Tim Sutton)</a></li>
 						<li><a href="mado/qgis.png" target="_blank">QGIS References/Dependencies</a></li>						
 						
@@ -146,9 +147,17 @@
 				</section>
 				<section>
 					<h2>QGIS (Vector)</h2>
-					Natural Earth Dataset
+					Natural Earth Dataset 
 					<p>						
 						<img width="399" height="554" src="mado/uk-airport.png" alt="uk air">
+					</p>
+				</section>
+				<section>
+					<h2>QGIS (Vector)</h2>
+					Natural Earth Dataset (states provinces) <br>
+					Filter: geonunit = Scotland
+					<p>						
+						<img width="852" height="843" src="mado/sl-provinces.png" alt="sl">
 					</p>
 				</section>
 				<section>
@@ -239,6 +248,17 @@
 				</section>
 				<section data-markdown>
 					<script type="text/template">
+						## GeoServer (WMS)
+
+						Start GeoServer and visualize in QGIS
+
+						```
+						sudo geoserver_start.sh 
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
 						## POSTGIS (SQL)
 
 						Query the area of the countries
@@ -249,16 +269,16 @@
 						```
 					</script>
 				</section>
-				<section data-markdown>
-					<script type="text/template">
-						## GeoServer (WMS)
-
-						Start GeoServer and visualize in QGIS
-
-						```
-						sudo geoserver_start.sh 
-						```
-					</script>
+				
+				<section>	
+					<h2>R Project</h2>
+					<ul>
+						<li>Commandline Interface (like Matlab,Scilab,...)</li>
+						<li><a href="mado/intro-spatial-rl.pdf" target="_blank">Intro Spatial R</a></li>
+						<li><a href="https://github.com/Robinlovelace/Creating-maps-in-R/" target="_blank">Github Sources</a></li>						
+						
+					</ul>			
+					
 				</section>
 			
 				<section>
