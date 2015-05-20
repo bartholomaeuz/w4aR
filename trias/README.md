@@ -1,1 +1,1 @@
-Website: http://www.verbundlinie.at/fahrplan/faq_ogd.php
+Schnittstelle to nowhere
