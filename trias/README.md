@@ -1,1 +1,1 @@
-Website: http://www.verbundlinie.at/fahrplan/faq_ogd.php
+Website: http://www.verbundlinie.at/fahrplan/ogd-service.php
